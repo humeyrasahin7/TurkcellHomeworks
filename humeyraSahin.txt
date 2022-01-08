@@ -1,0 +1,8 @@
+Ad Soyad: Hümeyra Şahin
+Meslek: Biyomedikal Mühendisi(2020 Mezunu)
+Yaşadığı il/ilçe: Antalya/Alanya
+Swift Tecrübesi: profesyonel olarak tecrübesi yok
+Bildiği Yazılım Dilleri: Swift, Java, Python 
+instagram: humeyrasahin
+linkedin: bme-humeyrasahin
+email: bme.humeyrasahin@outlook.com

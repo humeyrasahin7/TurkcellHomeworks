@@ -33,16 +33,40 @@ func getRepeatedChars(sentence: String, inputCount: Int) -> String{
         for j in 0..<arrayCount{
             if lettersArray[i].elementsEqual(lettersArray[j]) && lettersArray[i] != " " {
                 repeatCount += 1
-                
                 if repeatCount >= inputCount{
                     outputSentence.removeAll(where: {String($0) == lettersArray[i]})
                 }
             }
         }
-        print(lettersArray[i], repeatCount)
         repeatCount = 0
     }
     return outputSentence
 }
 print("final:" + getRepeatedChars(sentence: inputSentence, inputCount: 5))
+
+
+
+//MARK: QUESTION 2
+
+let inputSentence2 = "merhaba nasilsiniz iyiyim siz nasilsiniz ben de iyiyim"
+var splittedWords = [String.SubSequence]()
+var repeatCount2 = 0
+var wordsDict: [String.SubSequence : Int] = [:]
+func repeatedWords(input: String){
+    splittedWords = input.split(separator: " ")
+    for i in 0..<splittedWords.count{
+        for j in 0..<splittedWords.count{
+            if splittedWords[i].elementsEqual(splittedWords[j]){
+                repeatCount2 += 1
+            }
+        }
+        if wordsDict[splittedWords[i]] == nil {
+            wordsDict[splittedWords[i]] = repeatCount2
+        }
+        repeatCount2 = 0
+    }
+    print(wordsDict)
+}
+
+repeatedWords(input: inputSentence2)
 

@@ -129,3 +129,30 @@ findPrimeNumbers(num: 115)
 
 */
 
+//MARK: Q7: Fonksiyona parametre olarak verilen sayıya göre + - karakterlerini ekrana yazdıran bir fonksiyon yazınız. Örneğin 1 için sadece +, 2 için +-, 5 için +-+-+ şeklinde olmalıdır
+
+var param = 1
+var output = ""
+func printMinusPlus(input: Int){
+    for i in 1...input{
+        if i % 2 != 0{
+            output += "+"
+        } else {
+            output += "-"
+        }
+    }
+    print(output)
+    
+}
+printMinusPlus(input: param)
+/*
+//MARK: Q8: Fonksiyona parametre olarak verilen sayıyı en büyük yapacak şekilde 5 sayısını yanına koyunuz. Örneğin parametre 0 için çıktı 50 olmalıdır. Parametre 28 için 285, parametre 920 için 9520 olmalıdır
+
+var myOutput = 0
+
+func addFive(input: Int){
+    myOutput = input
+    
+   
+}
+*/

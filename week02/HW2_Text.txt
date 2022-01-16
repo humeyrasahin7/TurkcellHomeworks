@@ -1,1 +1,10 @@
+Q5: Değer döndürmeyip print ile çıktı veren fonksiyon ile return ile değer döndüren fonksiyon kullanım tercihinizi neye göre belirlersiniz?
+Answer: 
+Eğer fonksiyonun geri dönüş parametresini bir değişken olarak kullanacaksam return ile değer gönderen fonksiyon kullanmayı, eğer fonksiyonun sonucunu yalnızca çıktı olarak görmek istiyorsam printle çıktı veren fonksiyonu kullanmayı tercih ederdim.
 
+
+
+Q6: if let ve gurad let arasındaki farkı bir kaç cümle ile açıklayınız.
+Answer:
+if let koşulu sağladığında {} kod bloğunu gerçekleştirir yani true dönmesi durumunda ne yapacağımızı belirleriz fakar guard let'te ise koşulu sağlamadığımız durumda
+yani false döndüğünde else bloğu içerisine girerek false durumunda ne yapmamız gerektiğini belirlemiş oluruz. yani kısaca if let'te true dönmesi durumunda ne yapacağımızı belirtmek, guard let'te ise false durumunda ne yapacağımızı belirtmek zorundayız.

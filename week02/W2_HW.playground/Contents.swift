@@ -106,29 +106,33 @@ palindromeCheck(input: isPalindrome)
 
 
 
-//MARK: QUESTION 3: KAREKÖK KULLANIMIYLA ASAL ÇARPAN BULMA
-/*
-var primeNumbers = [Int]()
-var primeNumber = 2
+//MARK: QUESTION 3: KAREKÖK KULLANIMIYLA ASAL SAYI OLUP OLMADIĞINI BULMA
 
-func findPrimeNumbers(num: Double){
-    var sqrt = Int(sqrt(num))
-    print(sqrt)
-    while sqrt != 1{
-        if sqrt % primeNumber == 0{
-            sqrt /= primeNumber
-            print(sqrt)
-            primeNumbers.append(primeNumber)
-        } else {
-            primeNumber += 1
+var isPrime = true
+func isPrimeNumber(num: Int) -> Bool{
+    let sqrtOfNum = sqrt(Double(num))
+    for i in 2...Int(sqrtOfNum){
+        if num % i == 0{
+            isPrime = false
         }
     }
-    print(primeNumbers)
+    return isPrime
+    }
+
+print("Given number is prime number? \(isPrimeNumber(num: 5))")
+
+//MARK: Q4: Bir sınıfta en az bir yazılım dili bilenlerin sayısı 24, sadece swift bilenler 12, sadece kotlin bilenler 8 olduğuna göre her iki dili bilen kaç kişi vardır. (Sınıfta 24 kişi var, sadece swift ve kotlin bilinmekte.)
+
+let onlySwift = 12
+let onlyKotlin = 8
+let wholeClass = 24
+var both = 0
+func findBoth(onlySwift: Int, onlyKotlin: Int, wholeClass: Int){
+    both = wholeClass - (onlySwift + onlyKotlin)
+    print("İki dili bilenlerin sayisi = \(both)")
 }
-findPrimeNumbers(num: 115)
 
-*/
-
+findBoth(onlySwift: onlySwift, onlyKotlin: onlyKotlin, wholeClass: wholeClass)
 //MARK: Q7: Fonksiyona parametre olarak verilen sayıya göre + - karakterlerini ekrana yazdıran bir fonksiyon yazınız. Örneğin 1 için sadece +, 2 için +-, 5 için +-+-+ şeklinde olmalıdır
 
 var param = 1
@@ -145,14 +149,8 @@ func printMinusPlus(input: Int){
     
 }
 printMinusPlus(input: param)
-/*
+
 //MARK: Q8: Fonksiyona parametre olarak verilen sayıyı en büyük yapacak şekilde 5 sayısını yanına koyunuz. Örneğin parametre 0 için çıktı 50 olmalıdır. Parametre 28 için 285, parametre 920 için 9520 olmalıdır
 
-var myOutput = 0
 
-func addFive(input: Int){
-    myOutput = input
-    
-   
-}
-*/
+

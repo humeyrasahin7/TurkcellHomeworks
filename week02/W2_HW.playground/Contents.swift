@@ -130,9 +130,23 @@ var both = 0
 func findBoth(onlySwift: Int, onlyKotlin: Int, wholeClass: Int){
     both = wholeClass - (onlySwift + onlyKotlin)
     print("İki dili bilenlerin sayisi = \(both)")
+    
 }
-
 findBoth(onlySwift: onlySwift, onlyKotlin: onlyKotlin, wholeClass: wholeClass)
+
+// set'li versiyonu
+
+var onlySwiftSet: Set<Int> = [1,2,3,4,5,6,7,8,9,10,11,12]
+var onlyKotlinSet: Set<Int> = [13,14,15,16,17,18,19,20]
+var wholeClassSet: Set<Int> = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+var bothSet = Set<Int>()
+
+bothSet = wholeClassSet.symmetricDifference(onlySwiftSet.union(onlyKotlinSet))
+print(bothSet.count, bothSet)
+
+
+
+
 //MARK: Q7: Fonksiyona parametre olarak verilen sayıya göre + - karakterlerini ekrana yazdıran bir fonksiyon yazınız. Örneğin 1 için sadece +, 2 için +-, 5 için +-+-+ şeklinde olmalıdır
 
 var param = 1
@@ -151,6 +165,29 @@ func printMinusPlus(input: Int){
 printMinusPlus(input: param)
 
 //MARK: Q8: Fonksiyona parametre olarak verilen sayıyı en büyük yapacak şekilde 5 sayısını yanına koyunuz. Örneğin parametre 0 için çıktı 50 olmalıdır. Parametre 28 için 285, parametre 920 için 9520 olmalıdır
+var numberFinal = 0
 
+func insertFive(number: Int){
+    var charArray = [Character]()
+    let stringNum = String(number)
+    var myStringNum = ""
+    for num in stringNum {
+        charArray.append(num)
+    }
+    
+    for i in 0...charArray.count{
+        let intVal = charArray[i].wholeNumberValue!
+        if intVal <= 5 {
+            charArray.insert("5", at: i)
+            break
+        }
+    }
+    for n in charArray {
+        myStringNum += String(n)
+    }
+    
+    numberFinal = Int(myStringNum) ?? 0
+    print(numberFinal)
+}
 
-
+insertFive(number: 64)

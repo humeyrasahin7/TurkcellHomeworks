@@ -23,7 +23,6 @@ class ViewController: UIViewController {
 
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
         let ac = UIAlertController(title: "Add New Language", message: "Please Add New Language and Level", preferredStyle: .alert)
-        
         ac.addTextField { (languageField : UITextField!) -> Void in
             languageField.placeholder = "Please Enter Language"
             languageField.autocapitalizationType = .words
@@ -32,21 +31,29 @@ class ViewController: UIViewController {
             levelField.placeholder = "Please Enter Language Level"
             levelField.autocapitalizationType = .words
         }
-        
         let save = UIAlertAction(title: "Save", style: .default) { alert -> Void in
             let newLanguage = LanguageModel(languageName: ac.textFields![0].text!, languageLevel: ac.textFields![1].text!)
             self.languages.append(newLanguage)
             self.tableView.reloadData()
         }
-        
         ac.addAction(save)
         present(ac, animated: true)
-        
     }
     
+    @IBAction func addWithDelegate(_ sender: UIBarButtonItem) {
+        let senderVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SenderVC") as! SenderViewController
+        senderVC.delegate = self
+        present(senderVC, animated: true, completion: nil)
+    }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate{
+extension ViewController: UITableViewDataSource, UITableViewDelegate, AddNewDelegate{
+    
+    func saveNewLanguage(newLanguage: String, languageLevel: String) {
+        let newLanguage = LanguageModel(languageName: newLanguage, languageLevel: languageLevel)
+        self.languages.append(newLanguage)
+        self.tableView.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return languages.count
@@ -57,7 +64,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         cell.configureCell(model: languages[indexPath.row])
         return cell
     }
-    
+
     
 }
 

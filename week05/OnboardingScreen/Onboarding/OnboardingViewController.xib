@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="OnboardingScreen" customModuleProvider="target">
+            <connections>
+                <outlet property="detailLabel" destination="FNB-Tc-5xU" id="ZAM-EN-m5e"/>
+                <outlet property="goButton" destination="ebw-t0-QNH" id="CFW-rU-geH"/>
+                <outlet property="imageView" destination="7s2-4E-KaM" id="4q2-b8-k4M"/>
+                <outlet property="titleLabel" destination="gOR-My-4O1" id="K2z-YI-D4K"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7s2-4E-KaM">
+                    <rect key="frame" x="87" y="131" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="dhr-Ml-eh2"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOR-My-4O1">
+                    <rect key="frame" x="20" y="431" width="374" height="80"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="50"/>
+                    <color key="textColor" red="0.91916561129999996" green="0.47915474530000002" blue="0.43362982770000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNB-Tc-5xU">
+                    <rect key="frame" x="20" y="571" width="374" height="48"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                    <color key="textColor" red="0.91916561129999996" green="0.47915474530000002" blue="0.43362982770000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebw-t0-QNH">
+                    <rect key="frame" x="126" y="688" width="162" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="84" id="4YH-al-cEU"/>
+                        <constraint firstAttribute="height" constant="40" id="8of-9J-rQQ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="VsQ-8D-BOR"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Lets Go!" cornerStyle="capsule">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                        <color key="baseBackgroundColor" red="0.91916561129999996" green="0.47915474530000002" blue="0.43362982770000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="4YH-al-cEU"/>
+                            <exclude reference="8of-9J-rQQ"/>
+                        </mask>
+                    </variation>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.083210015995667477" blue="0.22435434761735584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="gOR-My-4O1" firstAttribute="top" secondItem="7s2-4E-KaM" secondAttribute="bottom" constant="60" id="960-of-UUT"/>
+                <constraint firstItem="ebw-t0-QNH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="165" id="NPL-ms-Dca"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7s2-4E-KaM" secondAttribute="trailing" constant="87" id="O27-Sx-xPe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ebw-t0-QNH" secondAttribute="trailing" constant="165" id="TTe-ob-TFR"/>
+                <constraint firstItem="gOR-My-4O1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="X2u-xl-sB3"/>
+                <constraint firstItem="ebw-t0-QNH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="126" id="XNO-eh-kRk"/>
+                <constraint firstItem="ebw-t0-QNH" firstAttribute="top" secondItem="FNB-Tc-5xU" secondAttribute="bottom" constant="95" id="dJB-pu-37j"/>
+                <constraint firstItem="ebw-t0-QNH" firstAttribute="top" secondItem="FNB-Tc-5xU" secondAttribute="bottom" constant="69" id="jcv-dE-QUn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gOR-My-4O1" secondAttribute="trailing" constant="20" id="keS-dd-v6X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FNB-Tc-5xU" secondAttribute="trailing" constant="20" id="pDQ-E2-DiP"/>
+                <constraint firstItem="7s2-4E-KaM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="q2P-2r-BNq"/>
+                <constraint firstItem="FNB-Tc-5xU" firstAttribute="top" secondItem="gOR-My-4O1" secondAttribute="bottom" constant="60" id="rRU-Dj-qo8"/>
+                <constraint firstItem="7s2-4E-KaM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="87" id="t16-Hr-E5w"/>
+                <constraint firstItem="FNB-Tc-5xU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="urf-M1-mvc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ebw-t0-QNH" secondAttribute="trailing" constant="126" id="wbb-CJ-Q9O"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="TTe-ob-TFR"/>
+                    <exclude reference="NPL-ms-Dca"/>
+                    <exclude reference="dJB-pu-37j"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="137.68115942028987" y="92.410714285714278"/>
+        </view>
+    </objects>
+</document>

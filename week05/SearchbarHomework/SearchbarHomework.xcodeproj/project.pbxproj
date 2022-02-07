@@ -14,6 +14,7 @@
 		C2D3578F27B142BD0060E27B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D3578E27B142BD0060E27B /* Assets.xcassets */; };
 		C2D3579227B142BD0060E27B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D3579027B142BD0060E27B /* LaunchScreen.storyboard */; };
 		C2D3579A27B149220060E27B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3579927B149220060E27B /* User.swift */; };
+		C2D3579E27B197960060E27B /* NoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3579D27B197960060E27B /* NoDataTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C2D3579127B142BD0060E27B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2D3579327B142BD0060E27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D3579927B149220060E27B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2D3579D27B197960060E27B /* NoDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C2D3578727B142BC0060E27B /* SceneDelegate.swift */,
 				C2D3579927B149220060E27B /* User.swift */,
 				C2D3578927B142BC0060E27B /* SearchViewController.swift */,
+				C2D3579D27B197960060E27B /* NoDataTableViewCell.swift */,
 				C2D3578B27B142BC0060E27B /* Main.storyboard */,
 				C2D3578E27B142BD0060E27B /* Assets.xcassets */,
 				C2D3579027B142BD0060E27B /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D3579E27B197960060E27B /* NoDataTableViewCell.swift in Sources */,
 				C2D3579A27B149220060E27B /* User.swift in Sources */,
 				C2D3578A27B142BC0060E27B /* SearchViewController.swift in Sources */,
 				C2D3578627B142BC0060E27B /* AppDelegate.swift in Sources */,

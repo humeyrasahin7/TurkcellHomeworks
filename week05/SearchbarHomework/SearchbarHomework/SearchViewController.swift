@@ -28,6 +28,7 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
 
 
@@ -36,21 +37,32 @@ class SearchViewController: UIViewController {
 
 
 //MARK: Table view data source
-extension SearchViewController: UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
-            return filteredUsers.count
+            if filteredUsers.count == 0{
+                return 1
+            } else {
+                return filteredUsers.count
+            }
         }
         return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell")
         let user: User
         
         if isFiltering {
-            user = filteredUsers[indexPath.row]
+            if filteredUsers.count == 0{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell")
+                cell?.textLabel?.text = "No Match Found"
+                return cell!
+            } else {
+                user = filteredUsers[indexPath.row]
+            }
         } else {
             user = users[indexPath.row]
         }
@@ -58,7 +70,21 @@ extension SearchViewController: UITableViewDataSource {
         cell?.textLabel?.text = user.username
         cell?.detailTextLabel?.text = user.email
         return cell!
+        
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var cellHeight = 43.5
+        if isFiltering{
+            if filteredUsers.count == 0{
+                cellHeight = tableView.frame.height
+                return cellHeight
+            }
+
+        }
+        return cellHeight
+    }
+    
 }
 
 //MARK: Searchbar Delegate
@@ -78,6 +104,7 @@ extension SearchViewController: UISearchBarDelegate {
         
         isFiltering = true
         tableView.reloadData()
+        
         }
     }
     

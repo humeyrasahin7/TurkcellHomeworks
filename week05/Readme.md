@@ -24,7 +24,9 @@ Bir UIViewController ekrandan kaybolduktan sonra bu fonksiyon çalışır. Kaybo
 ### Homework 3) setviewcontrollers’a viewcontroller tanımlamak zorunda mıyız?
 Evet çünkü definition'da "Set visible view controllers, optionally with animation. ***Array should only include view controllers*** that will be visible after the animation has completed." olarak belirtilmiş, array yalnızca viewcontroller tipini içerebilir.
 
-### Homework 4) searchBar elle kelimeyi sillince tüm verileri geri getirmelisiniz, veri bulunmuyorsa custom empty view oluşturarak kullanıcıya göstermeliniz
+### Homework 4) searchBar elle kelimeyi sillince tüm verileri geri getirmelisiniz, veri bulunmuyorsa custom empty view oluşturarak kullanıcıya göstermelisiniz
 
 [searchbar clear button](https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/week05/SearchbarHomework/SearchbarHomework/SearchViewController.swift)
-<img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/week05/nomatch.gif>
+
+
+<img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/week05/nomatch.gif">

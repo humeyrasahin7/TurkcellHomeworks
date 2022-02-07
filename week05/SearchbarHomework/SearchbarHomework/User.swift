@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct User: Decodable {
+    
+    let username: String
+    let email: String
+    let company: Company
+}
+
+struct Company: Decodable {
+    let name: String
+}

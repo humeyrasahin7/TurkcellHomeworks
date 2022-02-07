@@ -26,7 +26,7 @@ Evet çünkü definition'da "Set visible view controllers, optionally with anima
 
 ### Homework 4) searchBar elle kelimeyi sillince tüm verileri geri getirmelisiniz, veri bulunmuyorsa custom empty view oluşturarak kullanıcıya göstermelisiniz
 
-[searchbar clear button](https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/week05/SearchbarHomework/SearchbarHomework/SearchViewController.swift)
+[searchbar clear button, no match found screen](https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/week05/SearchbarHomework/SearchbarHomework/SearchViewController.swift)
 
 
 <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/week05/nomatch.gif">

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="seatCell" id="gTV-IL-0wX" customClass="SeatCell" customModule="BusTicket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="55" height="51"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="55" height="51"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wtx-Jn-0rF">
+                        <rect key="frame" x="0.0" y="0.0" width="55" height="51"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csu-BH-GCz">
+                        <rect key="frame" x="17" y="18.5" width="21" height="14.5"/>
+                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="9"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wtx-Jn-0rF" secondAttribute="bottom" id="A7z-Nf-zmd"/>
+                <constraint firstItem="csu-BH-GCz" firstAttribute="centerX" secondItem="wtx-Jn-0rF" secondAttribute="centerX" id="BkV-oL-TSE"/>
+                <constraint firstItem="wtx-Jn-0rF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bkz-ad-oOS"/>
+                <constraint firstItem="csu-BH-GCz" firstAttribute="centerY" secondItem="wtx-Jn-0rF" secondAttribute="centerY" id="GgO-fG-S9B"/>
+                <constraint firstAttribute="trailing" secondItem="wtx-Jn-0rF" secondAttribute="trailing" id="GlF-h9-hok"/>
+                <constraint firstItem="wtx-Jn-0rF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SpM-TN-xAE"/>
+            </constraints>
+            <size key="customSize" width="55" height="51"/>
+            <connections>
+                <outlet property="seatImage" destination="wtx-Jn-0rF" id="79u-Ln-hLC"/>
+                <outlet property="seatNumberLabel" destination="csu-BH-GCz" id="wZk-9L-mEd"/>
+            </connections>
+            <point key="canvasLocation" x="105.07246376811595" y="123.54910714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>

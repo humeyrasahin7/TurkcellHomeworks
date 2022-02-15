@@ -10,33 +10,33 @@ import UIKit
 private let reuseIdentifier = "seatCell"
 
 class ChairSelectionCollectionViewController: UICollectionViewController {
-
+    
     var ticket: Ticket?
     var selectedChairCount = 0
     var selectedChairs = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.collectionView!.register(UINib(nibName: "SeatCell", bundle: nil), forCellWithReuseIdentifier: "seatCell")
         self.collectionView.setCollectionViewLayout(createSeats(), animated: true)
         addReserveButton()
-        print(ticket)
+        
     }
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
     }
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return 45
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SeatCell
         cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
@@ -44,7 +44,7 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         return cell
     }
     
-//MARK: Delegate
+    //MARK: Delegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? SeatCell else {return}
         if selectedChairCount < 5{
@@ -59,9 +59,22 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
             }
             print(selectedChairs)
         } else {
-            let ac = UIAlertController(title: "Ups!", message: "You can't choose more than 5 seats", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            present(ac, animated: true)
+            if selectedChairs.contains(indexPath.row + 1){
+                cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
+                selectedChairCount -= 1
+            } else {
+                
+                let ac = UIAlertController(title: "Ups!", message: "You can't choose more than 5 seats", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                present(ac, animated: true)
+                let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+                subview.layer.cornerRadius = 60
+                subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
+                subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
+                subview.layer.borderWidth = 5
+                ac.view.tintColor = .black
+            }
         }
         
     }
@@ -75,14 +88,14 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         
         let rightSideGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.4), heightDimension: .absolute(70))
         let rightSideGroup = NSCollectionLayoutGroup.horizontal(layoutSize: rightSideGroupSize,
-                                                       subitem: item, count: 2)
+                                                                subitem: item, count: 2)
         
         let leftSideGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
-                                               heightDimension: .absolute(70))
+                                                       heightDimension: .absolute(70))
         let leftSideGroup = NSCollectionLayoutGroup.horizontal(layoutSize: leftSideGroupSize, subitem: item, count: 1)
         
         let wholeSeatsGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
-       
+        
         
         let wholeSeatsGroup = NSCollectionLayoutGroup.horizontal(layoutSize: wholeSeatsGroupSize, subitems: [leftSideGroup, rightSideGroup])
         
@@ -115,20 +128,26 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         ])
         reserveButton.translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
     @objc func reserveClicked(){
         if selectedChairCount == 0{
             let ac = UIAlertController(title: "UPS!", message: "You must choose at leaast 1 seat", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(ac, animated: true)
+            let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+            subview.layer.cornerRadius = 60
+            subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
+            subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
+            subview.layer.borderWidth = 5
+            ac.view.tintColor = .black
         } else {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ticketInfoVC") as! TicketInfoViewController
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        vc.ticket = ticket
-        vc.ticket?.selectedChairCount = selectedChairCount
-        vc.ticket?.selectedChairs = selectedChairs
-        present(vc, animated: true)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ticketInfoVC") as! TicketInfoViewController
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            vc.ticket = ticket
+            vc.ticket?.selectedChairCount = selectedChairCount
+            vc.ticket?.selectedChairs = selectedChairs
+            present(vc, animated: true)
         }
     }
 }

@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         userInfoView.layer.cornerRadius = 20
         destinationInfoView.layer.cornerRadius = 20
         dateView.layer.cornerRadius = 20
+        datePicker.date = .now
+        datePicker.minimumDate = .now
         self.hideKeyboard()
     }
 
@@ -45,20 +47,39 @@ class ViewController: UIViewController {
             
             let ac = UIAlertController(title: "UPS!", message: "You must write all of you informations", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OKAY", style: .default, handler: nil))
+            
             present(ac, animated: true)
+            
+            let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+            subview.layer.cornerRadius = 60
+            subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
+            subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
+            subview.layer.borderWidth = 5
+            ac.view.tintColor = .black
+                        
         } else {
-        
-        let passenger = Passenger(name: passengerName.text!, surname: passengerSurname.text!, id: Int(passengerID.text!)!)
-        
+            
+            let passenger = Passenger(name: passengerName.text!, surname: passengerSurname.text!, id: Int(passengerID.text!)!)
+            
             let ticket = Ticket(passenger: passenger, date: date, clock: clock,from: routeFrom.text, to: routeTo.text, isChairSelected: true, selectedChairCount: nil, selectedChairs: nil)
             
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "chairCollectionView") as! ChairSelectionCollectionViewController
-        vc.ticket = ticket
-        vc.modalPresentationStyle = .popover
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "chairCollectionView") as! ChairSelectionCollectionViewController
+            vc.ticket = ticket
+            vc.modalPresentationStyle = .popover
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: true)
+            
+            passengerName.text = ""
+            passengerSurname.text = ""
+            passengerID.text = ""
+            
+            routeFrom.text = ""
+            routeTo.text = ""
+            
+            datePicker.date = .now
+            
         }
     }
     

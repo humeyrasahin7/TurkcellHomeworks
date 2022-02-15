@@ -24,10 +24,7 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UINib(nibName: "SeatCell", bundle: nil), forCellWithReuseIdentifier: "seatCell")
         self.collectionView.setCollectionViewLayout(createSeats(), animated: true)
         addReserveButton()
-        
-        //TODO: Userdefaults sold chairs fetch
-        //is sold'sa user interaction enabled false
-        soldChairs = userDefault.array(forKey: "soldChairs") as! [Int]
+        soldChairs = userDefault.array(forKey: "soldChairs") as? [Int] ?? [Int]()
     }
     
     // MARK: UICollectionViewDataSource
@@ -45,7 +42,7 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SeatCell
-        //TODO: is sold control
+        //MARK: Is sold control
         if soldChairs.contains(indexPath.row + 1){
             cell.tintColor = .lightGray
             cell.isUserInteractionEnabled = false
@@ -116,6 +113,7 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         let seatLayout = UICollectionViewCompositionalLayout(section: section)
         return seatLayout
     }
+    //MARK: Create and add reserve button
     
     func addReserveButton(){
         let reserveButton = UIButton()
@@ -158,6 +156,7 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
     }
 }
 
+//MARK: Create Alert Controller Extension
 extension UIViewController{
     func createAC(title: String, message: String){
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -12,6 +12,6 @@ struct Clock{
     var minute  = 00
     
     func printClock(){
-        print(self.hour, self.minute!)
+        print(self.hour, self.minute)
     }
 }

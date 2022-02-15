@@ -12,6 +12,8 @@ class OnBoardingPageViewController: UIPageViewController {
     var controllers = [OnboardingViewController]()
     var currentPageIndex = 0
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

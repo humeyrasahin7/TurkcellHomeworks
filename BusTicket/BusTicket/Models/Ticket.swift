@@ -12,6 +12,8 @@ struct Ticket{
     var passenger: Passenger
     var date: TicketDate
     var clock: Clock
+    var from: String?
+    var to: String?
     var isChairSelected = false
     var selectedChairCount: Int?
     var selectedChairs: [Int]?

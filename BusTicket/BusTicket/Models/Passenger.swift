@@ -11,8 +11,5 @@ struct Passenger{
     var name = "İsimsiz"
     var surname = "İsimsiz"
     var id = 0
-    
-    func printPassenger() {
-        print(self.name, self.surname, self.id)
-    }
+
 }

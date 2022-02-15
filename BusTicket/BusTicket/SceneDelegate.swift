@@ -26,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "obPageVC")
             self.window?.rootViewController = initialViewController
         }
+        window?.overrideUserInterfaceStyle = .light
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

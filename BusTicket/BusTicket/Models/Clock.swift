@@ -8,10 +8,6 @@
 import Foundation
 
 struct Clock{
-    var hour = 00
-    var minute  = 00
-    
-    func printClock(){
-        print(self.hour, self.minute)
-    }
+    var hour = 0
+    var minute  = 0
 }

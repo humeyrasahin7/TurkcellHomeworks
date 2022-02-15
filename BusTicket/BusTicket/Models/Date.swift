@@ -11,8 +11,5 @@ struct TicketDate{
     var day = "01"
     var month = "01"
     var year = "2022"
-    
-    func printDate(){
-        print(self.day, self.month, self.year)
-    }
+
 }

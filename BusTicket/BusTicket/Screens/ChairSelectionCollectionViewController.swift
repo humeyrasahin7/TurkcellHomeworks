@@ -14,7 +14,10 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
     var ticket: Ticket?
     var selectedChairCount = 0
     var selectedChairs = [Int]()
+    var soldChairs = [Int]()
     
+    let userDefault = UserDefaults.standard
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +25,9 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         self.collectionView.setCollectionViewLayout(createSeats(), animated: true)
         addReserveButton()
         
+        //TODO: Userdefaults sold chairs fetch
+        //is sold'sa user interaction enabled false
+        soldChairs = userDefault.array(forKey: "soldChairs") as! [Int]
     }
     
     // MARK: UICollectionViewDataSource
@@ -39,7 +45,15 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SeatCell
-        cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        //TODO: is sold control
+        if soldChairs.contains(indexPath.row + 1){
+            cell.tintColor = .lightGray
+            cell.isUserInteractionEnabled = false
+            cell.isThisChairSold = true
+        } else {
+            cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        }
+        
         cell.seatNumberLabel.text = "\(indexPath.row + 1)"
         return cell
     }
@@ -47,35 +61,30 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
     //MARK: Delegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? SeatCell else {return}
-        if selectedChairCount < 5{
-            if selectedChairs.contains(indexPath.row + 1){
-                cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
-                selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
-                selectedChairCount -= 1
+        if !cell.isThisChairSold{
+            if selectedChairCount < 5{
+                if selectedChairs.contains(indexPath.row + 1){
+                    cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                    selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
+                    selectedChairCount -= 1
+                } else {
+                    collectionView.cellForItem(at: indexPath)?.tintColor = #colorLiteral(red: 0.5738236904, green: 0.003818957368, blue: 0.2348305285, alpha: 0.6287468112)
+                    selectedChairCount += 1
+                    selectedChairs.append(indexPath.row + 1)
+                }
+                print(selectedChairs)
             } else {
-                collectionView.cellForItem(at: indexPath)?.tintColor = #colorLiteral(red: 0.5738236904, green: 0.003818957368, blue: 0.2348305285, alpha: 0.6287468112)
-                selectedChairCount += 1
-                selectedChairs.append(indexPath.row + 1)
-            }
-            print(selectedChairs)
-        } else {
-            if selectedChairs.contains(indexPath.row + 1){
-                cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
-                selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
-                selectedChairCount -= 1
-            } else {
-                
-                let ac = UIAlertController(title: "Ups!", message: "You can't choose more than 5 seats", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-                present(ac, animated: true)
-                let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
-                subview.layer.cornerRadius = 60
-                subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
-                subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
-                subview.layer.borderWidth = 5
-                ac.view.tintColor = .black
+                if selectedChairs.contains(indexPath.row + 1){
+                    cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                    selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
+                    selectedChairCount -= 1
+                } else {
+                    createAC(title: "UPS!", message: "You can't choose more than 5 seats")
+                    
+                }
             }
         }
+        
         
     }
     
@@ -129,18 +138,15 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         reserveButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    //MARK: Reserve Action
     @objc func reserveClicked(){
         if selectedChairCount == 0{
-            let ac = UIAlertController(title: "UPS!", message: "You must choose at leaast 1 seat", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(ac, animated: true)
-            let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
-            subview.layer.cornerRadius = 60
-            subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
-            subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
-            subview.layer.borderWidth = 5
-            ac.view.tintColor = .black
+            createAC(title: "UPS!", message: "You must choose at leaast 1 seat")
         } else {
+            for i in 0...selectedChairs.count-1{
+                soldChairs.append(selectedChairs[i])
+            }
+            userDefault.set(soldChairs, forKey: "soldChairs")
             let vc = storyboard?.instantiateViewController(withIdentifier: "ticketInfoVC") as! TicketInfoViewController
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
@@ -149,5 +155,19 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
             vc.ticket?.selectedChairs = selectedChairs
             present(vc, animated: true)
         }
+    }
+}
+
+extension UIViewController{
+    func createAC(title: String, message: String){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true)
+        let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.layer.cornerRadius = 60
+        subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
+        subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
+        subview.layer.borderWidth = 5
+        ac.view.tintColor = .black
     }
 }

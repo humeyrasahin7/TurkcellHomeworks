@@ -14,17 +14,6 @@ struct Ticket{
     var clock: Clock
     var from: String?
     var to: String?
-    var isChairSelected = false
     var selectedChairCount: Int?
     var selectedChairs: [Int]?
-    //MARK: Methods
-    
-    func reserveChair(selectedChair: Int){
-        if !(selectedChair < 1 && selectedChair > 5){
-            //TODO:
-        } else {
-            let ac = UIAlertController(title: "Choose Again!", message: "You've choose ", preferredStyle: .alert)
-            
-        }
-    }
 }

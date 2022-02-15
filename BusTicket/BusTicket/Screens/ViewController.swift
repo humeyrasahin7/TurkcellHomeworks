@@ -45,23 +45,13 @@ class ViewController: UIViewController {
             routeTo.text!.isEmpty ||
             routeFrom.text!.isEmpty {
             
-            let ac = UIAlertController(title: "UPS!", message: "You must write all of you informations", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OKAY", style: .default, handler: nil))
-            
-            present(ac, animated: true)
-            
-            let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
-            subview.layer.cornerRadius = 60
-            subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
-            subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
-            subview.layer.borderWidth = 5
-            ac.view.tintColor = .black
+            createAC(title: "UPS!", message: "You must enter all of you informations")
                         
         } else {
             
             let passenger = Passenger(name: passengerName.text!, surname: passengerSurname.text!, id: Int(passengerID.text!)!)
             
-            let ticket = Ticket(passenger: passenger, date: date, clock: clock,from: routeFrom.text, to: routeTo.text, isChairSelected: true, selectedChairCount: nil, selectedChairs: nil)
+            let ticket = Ticket(passenger: passenger, date: date, clock: clock,from: routeFrom.text, to: routeTo.text, selectedChairCount: nil, selectedChairs: nil)
             
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -109,5 +99,27 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+//MARK: TextField Max Length Extension
+private var __maxLengths = [UITextField: Int]()
+extension UITextField {
+    @IBInspectable var maxLength: Int {
+        get {
+            guard let l = __maxLengths[self] else {
+                return 150 // (global default-limit. or just, Int.max)
+            }
+            return l
+        }
+        set {
+            __maxLengths[self] = newValue
+            addTarget(self, action: #selector(fix), for: .editingChanged)
+        }
+    }
+    @objc func fix(textField: UITextField) {
+        if let t = textField.text {
+            textField.text = String(t.prefix(maxLength))
+        }
     }
 }

@@ -104,8 +104,8 @@
 		C25BC74827B7B85700C469E5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C25BC72E27B7A65D00C469E5 /* ViewController.swift */,
 				C25BC74627B7B61A00C469E5 /* OnBoardingPageViewController.swift */,
+				C25BC72E27B7A65D00C469E5 /* ViewController.swift */,
 				C25BC75227BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift */,
 				C2149D2C27BAA504009F6638 /* TicketInfoViewController.swift */,
 			);

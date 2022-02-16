@@ -123,3 +123,23 @@ extension UITextField {
         }
     }
 }
+
+//MARK: Create Alert Controller Extension
+extension UIViewController{
+    
+    func createAC(title: String, message: String){
+        
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true)
+        let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.layer.cornerRadius = 60
+        subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
+        subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
+        subview.layer.borderWidth = 5
+        ac.view.tintColor = .black
+        
+        
+        
+    }
+}

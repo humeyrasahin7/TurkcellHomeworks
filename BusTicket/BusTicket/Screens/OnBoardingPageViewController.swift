@@ -41,7 +41,7 @@ class OnBoardingPageViewController: UIPageViewController {
         controllers.append(vc3)
        
         self.view.addSubview(pageControl)
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeAutomatically), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(changeAutomatically), userInfo: nil, repeats: true)
         
     }
     
@@ -109,6 +109,7 @@ extension OnBoardingPageViewController: UIPageViewControllerDelegate{
         guard completed else { return }
         guard let index = pageViewController.viewControllers?.first?.view.tag else { return }
         self.pageControl.currentPage = index
+        currentPageIndex = index
     }
     
 }

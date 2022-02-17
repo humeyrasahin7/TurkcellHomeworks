@@ -11,5 +11,4 @@ struct TicketDate{
     var day = "01"
     var month = "01"
     var year = "2022"
-
 }

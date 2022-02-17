@@ -17,7 +17,7 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
     var soldChairs = [Int]()
     
     let userDefault = UserDefaults.standard
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,31 +58,26 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
     //MARK: Delegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? SeatCell else {return}
-        if !cell.isThisChairSold{
-            if selectedChairCount < 5{
-                if selectedChairs.contains(indexPath.row + 1){
-                    cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
-                    selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
-                    selectedChairCount -= 1
-                } else {
-                    collectionView.cellForItem(at: indexPath)?.tintColor = #colorLiteral(red: 0.5738236904, green: 0.003818957368, blue: 0.2348305285, alpha: 0.6287468112)
-                    selectedChairCount += 1
-                    selectedChairs.append(indexPath.row + 1)
-                }
-                print(selectedChairs)
+        if selectedChairCount < 5{
+            if selectedChairs.contains(indexPath.row + 1){
+                cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
+                selectedChairCount -= 1
+            } else{
+                collectionView.cellForItem(at: indexPath)?.tintColor = #colorLiteral(red: 0.5738236904, green: 0.003818957368, blue: 0.2348305285, alpha: 0.6287468112)
+                selectedChairCount += 1
+                selectedChairs.append(indexPath.row + 1)
+            }
+            print(selectedChairs)
+        } else {
+            if selectedChairs.contains(indexPath.row + 1){
+                cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
+                selectedChairCount -= 1
             } else {
-                if selectedChairs.contains(indexPath.row + 1){
-                    cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
-                    selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
-                    selectedChairCount -= 1
-                } else {
-                    createAC(title: "UPS!", message: "You can't choose more than 5 seats")
-                    
-                }
+                createAC(title: "UPS!", message: "You can't choose more than 5 seats")
             }
         }
-        
-        
     }
     
     //MARK: Create Seats
@@ -113,8 +108,8 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         let seatLayout = UICollectionViewCompositionalLayout(section: section)
         return seatLayout
     }
-    //MARK: Create and add reserve button
     
+    //MARK: Create and add reserve button
     func addReserveButton(){
         let reserveButton = UIButton()
         reserveButton.backgroundColor = #colorLiteral(red: 0.4694949389, green: 0.8043939471, blue: 0.8298689723, alpha: 0.3392591412)
@@ -127,9 +122,12 @@ class ChairSelectionCollectionViewController: UICollectionViewController {
         collectionView.addSubview(reserveButton)
         
         NSLayoutConstraint.activate([
-            reserveButton.trailingAnchor.constraint(equalTo: collectionView.safeAreaLayoutGuide.trailingAnchor, constant: -140),
-            reserveButton.leadingAnchor.constraint(equalTo: collectionView.safeAreaLayoutGuide.leadingAnchor, constant: 140),
-            reserveButton.bottomAnchor.constraint(equalTo: collectionView.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            reserveButton.trailingAnchor.constraint(equalTo: collectionView.safeAreaLayoutGuide.trailingAnchor,
+                                                    constant: -140),
+            reserveButton.leadingAnchor.constraint(equalTo: collectionView.safeAreaLayoutGuide.leadingAnchor,
+                                                   constant: 140),
+            reserveButton.bottomAnchor.constraint(equalTo: collectionView.safeAreaLayoutGuide.bottomAnchor,
+                                                  constant: -50),
             reserveButton.heightAnchor.constraint(equalToConstant: 45),
             
         ])

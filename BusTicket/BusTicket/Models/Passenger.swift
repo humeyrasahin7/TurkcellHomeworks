@@ -11,5 +11,4 @@ struct Passenger{
     var name = "İsimsiz"
     var surname = "İsimsiz"
     var id = 0
-
 }

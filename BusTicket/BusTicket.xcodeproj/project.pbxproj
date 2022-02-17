@@ -24,6 +24,7 @@
 		C25BC74F27B92F6800C469E5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BC74E27B92F6800C469E5 /* Date.swift */; };
 		C25BC75127B92FC100C469E5 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BC75027B92FC100C469E5 /* Clock.swift */; };
 		C25BC75327BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BC75227BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift */; };
+		C2F0B5EF27BE772B00E507B1 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F0B5EE27BE772B00E507B1 /* CustomAlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C25BC74E27B92F6800C469E5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C25BC75027B92FC100C469E5 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		C25BC75227BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairSelectionCollectionViewController.swift; sourceTree = "<group>"; };
+		C2F0B5EE27BE772B00E507B1 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				C25BC72E27B7A65D00C469E5 /* ViewController.swift */,
 				C25BC75227BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift */,
 				C2149D2C27BAA504009F6638 /* TicketInfoViewController.swift */,
+				C2F0B5EE27BE772B00E507B1 /* CustomAlertViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				C2149D2D27BAA504009F6638 /* TicketInfoViewController.swift in Sources */,
 				C25BC75127B92FC100C469E5 /* Clock.swift in Sources */,
 				C25BC74F27B92F6800C469E5 /* Date.swift in Sources */,
+				C2F0B5EF27BE772B00E507B1 /* CustomAlertViewController.swift in Sources */,
 				C25BC74427B7A69200C469E5 /* OnboardingViewController.swift in Sources */,
 				C25BC74727B7B61A00C469E5 /* OnBoardingPageViewController.swift in Sources */,
 				C25BC72B27B7A65D00C469E5 /* AppDelegate.swift in Sources */,

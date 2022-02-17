@@ -8,7 +8,7 @@
 import UIKit
 
 class OnBoardingPageViewController: UIPageViewController {
-
+    
     var controllers = [OnboardingViewController]()
     var currentPageIndex = 0
     
@@ -19,7 +19,7 @@ class OnBoardingPageViewController: UIPageViewController {
         
         self.dataSource = self
         self.delegate = self
-       
+        
         
         let vc1 = makeController(imageName: "bus",
                                  titleLabel: "Welcome!",
@@ -39,9 +39,14 @@ class OnBoardingPageViewController: UIPageViewController {
         vc3.view.tag = 2
         vc3.goButton.isHidden = false
         controllers.append(vc3)
-       
+        
         self.view.addSubview(pageControl)
-        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(changeAutomatically), userInfo: nil, repeats: true)
+        
+        Timer.scheduledTimer(timeInterval: 3.0,
+                             target: self,
+                             selector: #selector(changeAutomatically),
+                             userInfo: nil,
+                             repeats: true)
         
     }
     
@@ -53,29 +58,32 @@ class OnBoardingPageViewController: UIPageViewController {
         }
         
         pageControl.currentPage = currentPageIndex
-        setViewControllers([controllers[currentPageIndex]], direction: .forward, animated: true, completion: nil)
+        setViewControllers([controllers[currentPageIndex]],
+                           direction: .forward,
+                           animated: true,
+                           completion: nil)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let first = controllers.first else { return }
         modalPresentationStyle = .fullScreen
         pageControl.currentPage = currentPageIndex
-        setViewControllers([first], direction: .forward, animated: true, completion: nil)
-        
-        
+        setViewControllers([first],
+                           direction: .forward,
+                           animated: true,
+                           completion: nil)
     }
     
-
-
     private lazy var pageControl: UIPageControl = {
         let pageControlWidth: CGFloat = 200
         let pageControlHeight: CGFloat = 100
-
+        
         let frame = CGRect(x: (UIScreen.main.bounds.width - pageControlWidth) / 2,
                            y: UIScreen.main.bounds.height - 100,
                            width: pageControlWidth,
                            height: pageControlHeight)
-
+        
         let pageControl = UIPageControl(frame: frame)
         pageControl.numberOfPages = controllers.count
         pageControl.pageIndicatorTintColor = .darkGray
@@ -88,7 +96,10 @@ class OnBoardingPageViewController: UIPageViewController {
         let index = sender.currentPage
         let direction: UIPageViewController.NavigationDirection = currentPageIndex > index ? .reverse : .forward
         currentPageIndex = index
-        setViewControllers([controllers[index]], direction: direction, animated: true, completion: nil)
+        setViewControllers([controllers[index]],
+                           direction: direction,
+                           animated: true,
+                           completion: nil)
     }
     
     func makeController(imageName: String, titleLabel: String, detailLabel: String) -> OnboardingViewController{
@@ -99,7 +110,7 @@ class OnBoardingPageViewController: UIPageViewController {
         vc.subtitleLabel.text = detailLabel
         return vc
     }
-
+    
 }
 
 //MARK: Delegate
@@ -121,7 +132,6 @@ extension OnBoardingPageViewController: UIPageViewControllerDataSource{
         guard let index = controllers.firstIndex(of: viewController as! OnboardingViewController), index > 0 else { return nil }
         let previous = index - 1
         return controllers[previous]
-        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -130,6 +140,6 @@ extension OnBoardingPageViewController: UIPageViewControllerDataSource{
         let next = index + 1
         return controllers[next]
     }
-
+    
 }
 

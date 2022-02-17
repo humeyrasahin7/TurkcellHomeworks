@@ -9,8 +9,6 @@ import UIKit
 
 class TicketInfoViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var infoMainView: UIView!
     @IBOutlet weak var destinationView: UIView!

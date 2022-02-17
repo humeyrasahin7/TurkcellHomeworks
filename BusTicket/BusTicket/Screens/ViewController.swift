@@ -20,10 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var routeTo: UITextField!
     
     @IBOutlet weak var dateView: UIView!
-
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     
-
+    
     var date = TicketDate()
     var clock =  Clock()
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         datePicker.minimumDate = .now
         self.hideKeyboard()
     }
-
+    
     //MARK: Go To Chair Selection
     @IBAction func goToChairSelection(_ sender: UIButton) {
         if passengerName.text!.isEmpty ||
@@ -45,8 +45,8 @@ class ViewController: UIViewController {
             routeTo.text!.isEmpty ||
             routeFrom.text!.isEmpty {
             
-            createAC(title: "UPS!", message: "You must enter all of you informations")
-                        
+            createAC(title: "UPS!", message: "You must enter all of your informations")
+            
         } else {
             
             let passenger = Passenger(name: passengerName.text!, surname: passengerSurname.text!, id: Int(passengerID.text!)!)
@@ -129,17 +129,14 @@ extension UIViewController{
     
     func createAC(title: String, message: String){
         
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(ac, animated: true)
-        let subview = (ac.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
-        subview.layer.cornerRadius = 60
-        subview.layer.backgroundColor = #colorLiteral(red: 0.5490196078, green: 0.7960784314, blue: 0.8235294118, alpha: 0.6669857202)
-        subview.layer.borderColor = #colorLiteral(red: 0.9004804492, green: 0.9303815961, blue: 0.7242122889, alpha: 1)
-        subview.layer.borderWidth = 5
-        ac.view.tintColor = .black
-        
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "customAC") as! CustomAlertViewController
+        _ = vc.view
+        vc.createCustomAC(title: title, message: message)
+        UIView.transition(with: self.view, duration: 0.1, options: [.transitionCrossDissolve], animations: {
+            self.addChild(vc)
+            self.view.addSubview(vc.view)
+        }, completion: nil)
         
     }
 }

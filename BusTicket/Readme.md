@@ -16,6 +16,6 @@ ________
 
 <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/BusTicket/Screenshots/selectedChair.PNG" width="300" height="690"> <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/BusTicket/Screenshots/none.PNG" width="300" height="690"> <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/BusTicket/Screenshots/moreThanFive.PNG" width="300" height="690">
 
--**Ticket:** After choosing chairs you can see your ticket information.
+- **Ticket:** After choosing chairs you can see your ticket information.
 
 <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/BusTicket/Screenshots/ticket.PNG" width="300" height="690">

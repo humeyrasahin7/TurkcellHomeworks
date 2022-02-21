@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "chairCollectionView") as! ChairSelectionCollectionViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "customCollectionView") as! CustomCollectionViewController
             vc.ticket = ticket
             vc.modalPresentationStyle = .popover
             vc.modalTransitionStyle = .crossDissolve

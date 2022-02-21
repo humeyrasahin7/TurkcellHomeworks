@@ -23,7 +23,7 @@
 		C25BC74D27B92F4300C469E5 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BC74C27B92F4300C469E5 /* Passenger.swift */; };
 		C25BC74F27B92F6800C469E5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BC74E27B92F6800C469E5 /* Date.swift */; };
 		C25BC75127B92FC100C469E5 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BC75027B92FC100C469E5 /* Clock.swift */; };
-		C25BC75327BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BC75227BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift */; };
+		C25EE43427C3C5200038C1EE /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25EE43327C3C5200038C1EE /* CustomCollectionViewController.swift */; };
 		C2F0B5EF27BE772B00E507B1 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F0B5EE27BE772B00E507B1 /* CustomAlertViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 		C25BC74C27B92F4300C469E5 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		C25BC74E27B92F6800C469E5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C25BC75027B92FC100C469E5 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		C25BC75227BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairSelectionCollectionViewController.swift; sourceTree = "<group>"; };
+		C25EE43327C3C5200038C1EE /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
 		C2F0B5EE27BE772B00E507B1 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,9 +108,9 @@
 			children = (
 				C25BC74627B7B61A00C469E5 /* OnBoardingPageViewController.swift */,
 				C25BC72E27B7A65D00C469E5 /* ViewController.swift */,
-				C25BC75227BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift */,
 				C2149D2C27BAA504009F6638 /* TicketInfoViewController.swift */,
 				C2F0B5EE27BE772B00E507B1 /* CustomAlertViewController.swift */,
+				C25EE43327C3C5200038C1EE /* CustomCollectionViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -216,11 +216,11 @@
 				C25BC75127B92FC100C469E5 /* Clock.swift in Sources */,
 				C25BC74F27B92F6800C469E5 /* Date.swift in Sources */,
 				C2F0B5EF27BE772B00E507B1 /* CustomAlertViewController.swift in Sources */,
+				C25EE43427C3C5200038C1EE /* CustomCollectionViewController.swift in Sources */,
 				C25BC74427B7A69200C469E5 /* OnboardingViewController.swift in Sources */,
 				C25BC74727B7B61A00C469E5 /* OnBoardingPageViewController.swift in Sources */,
 				C25BC72B27B7A65D00C469E5 /* AppDelegate.swift in Sources */,
 				C25BC72D27B7A65D00C469E5 /* SceneDelegate.swift in Sources */,
-				C25BC75327BA8BE300C469E5 /* ChairSelectionCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

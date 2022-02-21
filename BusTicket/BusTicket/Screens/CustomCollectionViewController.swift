@@ -41,10 +41,13 @@ class CustomCollectionViewController: UIViewController {
         infoStackView.layer.cornerRadius = 20
         
         selectedImage.image = image
-        selectedImage.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        selectedImage.tintColor = #colorLiteral(red: 0.5738236904, green: 0.003818957368, blue: 0.2348305285, alpha: 0.6287468112)
         
         soldImage.image = image
-        //soldImage.tintColor = 
+        soldImage.tintColor = .lightGray
+        
+        availableImage.image = image
+        availableImage.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
         
     }
     
@@ -133,6 +136,30 @@ extension CustomCollectionViewController: UICollectionViewDelegate, UICollection
         
         cell.seatNumberLabel.text = "\(indexPath.row + 1)"
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SeatCell else {return}
+        if selectedChairCount < 5{
+            if selectedChairs.contains(indexPath.row + 1){
+                cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
+                selectedChairCount -= 1
+            } else{
+                collectionView.cellForItem(at: indexPath)?.tintColor = #colorLiteral(red: 0.5738236904, green: 0.003818957368, blue: 0.2348305285, alpha: 0.6287468112)
+                selectedChairCount += 1
+                selectedChairs.append(indexPath.row + 1)
+            }
+            print(selectedChairs)
+        } else {
+            if selectedChairs.contains(indexPath.row + 1){
+                cell.tintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                selectedChairs.remove(at: selectedChairs.firstIndex(of: (indexPath.row + 1))!)
+                selectedChairCount -= 1
+            } else {
+                createAC(title: "UPS!", message: "You can't choose more than 5 seats")
+            }
+        }
     }
     
     

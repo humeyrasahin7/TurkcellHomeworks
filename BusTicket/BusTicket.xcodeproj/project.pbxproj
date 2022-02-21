@@ -108,9 +108,9 @@
 			children = (
 				C25BC74627B7B61A00C469E5 /* OnBoardingPageViewController.swift */,
 				C25BC72E27B7A65D00C469E5 /* ViewController.swift */,
+				C25EE43327C3C5200038C1EE /* CustomCollectionViewController.swift */,
 				C2149D2C27BAA504009F6638 /* TicketInfoViewController.swift */,
 				C2F0B5EE27BE772B00E507B1 /* CustomAlertViewController.swift */,
-				C25EE43327C3C5200038C1EE /* CustomCollectionViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";

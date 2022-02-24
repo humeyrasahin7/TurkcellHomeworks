@@ -30,22 +30,13 @@ class TicketInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleView.layer.cornerRadius = 30
-        infoMainView.layer.cornerRadius = 30
-        destinationView.layer.cornerRadius = 30
-        passengerInfoView.layer.cornerRadius = 30
-        priceView.layer.cornerRadius = 30
+        titleView.layer.cornerRadius = 25
+        infoMainView.layer.cornerRadius = 25
+        destinationView.layer.cornerRadius = 25
+        passengerInfoView.layer.cornerRadius = 25
+        priceView.layer.cornerRadius = 15
         
-        fromLabel.adjustsFontSizeToFitWidth = true
-        fromLabel.minimumScaleFactor = 0.7
-        toLabel.adjustsFontSizeToFitWidth = true
-        toLabel.minimumScaleFactor = 0.7
-        
-        reservedSeatsLabel.adjustsFontSizeToFitWidth = true
-        reservedSeatsLabel.minimumScaleFactor = 0.7
-        
-        priceLabel.adjustsFontSizeToFitWidth = true
-        priceLabel.minimumScaleFactor = 0.7
+      
         
         fromLabel.text = ticket.from?.uppercased()
         toLabel.text = ticket.to?.uppercased()

@@ -26,9 +26,10 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        titleBackgound.layer.cornerRadius = 35
-        detailBackground.layer.cornerRadius = 35
+        titleLabel.adjustsFontSizeToFitWidth = true
+        subtitleLabel.adjustsFontSizeToFitWidth = true
+        titleBackgound.layer.cornerRadius = 25
+        detailBackground.layer.cornerRadius = 25
         
         
     }

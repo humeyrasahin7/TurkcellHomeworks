@@ -38,7 +38,7 @@ class CustomCollectionViewController: UIViewController {
         configReserveButton()
         soldChairs = userDefault.array(forKey: "soldChairs") as? [Int] ?? [Int]()
         
-        infoStackView.layer.cornerRadius = 20
+        infoStackView.layer.cornerRadius = 15
         
         selectedImage.image = image
         selectedImage.tintColor = #colorLiteral(red: 0.5738236904, green: 0.003818957368, blue: 0.2348305285, alpha: 0.6287468112)

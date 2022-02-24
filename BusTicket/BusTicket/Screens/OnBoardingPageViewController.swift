@@ -77,10 +77,11 @@ class OnBoardingPageViewController: UIPageViewController {
     
     private lazy var pageControl: UIPageControl = {
         let pageControlWidth: CGFloat = 200
-        let pageControlHeight: CGFloat = 100
+        let pageControlHeight: CGFloat = 65
+        
         
         let frame = CGRect(x: (UIScreen.main.bounds.width - pageControlWidth) / 2,
-                           y: UIScreen.main.bounds.height - 100,
+                           y: UIScreen.main.bounds.height - 45,
                            width: pageControlWidth,
                            height: pageControlHeight)
         

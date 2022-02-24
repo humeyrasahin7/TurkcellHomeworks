@@ -81,7 +81,7 @@ class OnBoardingPageViewController: UIPageViewController {
         
         
         let frame = CGRect(x: (UIScreen.main.bounds.width - pageControlWidth) / 2,
-                           y: UIScreen.main.bounds.height - 45,
+                           y: UIScreen.main.bounds.height - 55,
                            width: pageControlWidth,
                            height: pageControlHeight)
         

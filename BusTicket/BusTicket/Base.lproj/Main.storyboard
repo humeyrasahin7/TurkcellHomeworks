@@ -513,22 +513,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qts-MW-bgW">
-                                <rect key="frame" x="53.666666666666657" y="296.66666666666663" width="307" height="312.66666666666663"/>
+                                <rect key="frame" x="53.666666666666657" y="318.66666666666663" width="307" height="268.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGR-gj-qcv">
-                                        <rect key="frame" x="68.333333333333343" y="31.333333333333314" width="170" height="59"/>
+                                        <rect key="frame" x="68.333333333333343" y="26.666666666666625" width="170" height="50.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLq-MT-quK">
-                                        <rect key="frame" x="17" y="99" width="273" height="114.66666666666669"/>
+                                        <rect key="frame" x="17" y="85" width="273" height="98.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKp-Z3-uP5">
-                                        <rect key="frame" x="10" y="234.33333333333334" width="287" height="50.333333333333343"/>
+                                        <rect key="frame" x="10" y="201.66666666666669" width="287" height="43"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button">
                                             <attributedString key="attributedTitle">
@@ -556,10 +556,10 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stop" highlightedImage="stop" translatesAutoresizingMaskIntoConstraints="NO" id="6jG-hD-Lil">
-                                        <rect key="frame" x="15.333333333333336" y="15.666666666666629" width="60.000000000000007" height="84"/>
+                                        <rect key="frame" x="15.333333333333336" y="13.333333333333314" width="60.000000000000007" height="72.333333333333329"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stop" highlightedImage="hompageRoad" translatesAutoresizingMaskIntoConstraints="NO" id="zuu-n3-M0t">
-                                        <rect key="frame" x="231.33333333333337" y="15.666666666666629" width="60" height="84"/>
+                                        <rect key="frame" x="231.33333333333337" y="13.333333333333314" width="60" height="72.333333333333329"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.68404750631313127" green="0.0" blue="0.070173792602568411" alpha="0.73533216059602646" colorSpace="custom" customColorSpace="displayP3"/>
@@ -592,7 +592,7 @@
                         <constraints>
                             <constraint firstItem="Qts-MW-bgW" firstAttribute="centerY" secondItem="9p2-42-tcL" secondAttribute="centerY" id="78S-R9-NAP"/>
                             <constraint firstItem="Qts-MW-bgW" firstAttribute="centerX" secondItem="9p2-42-tcL" secondAttribute="centerX" id="HXb-jA-VN2"/>
-                            <constraint firstItem="Qts-MW-bgW" firstAttribute="height" secondItem="tPV-Tw-Gje" secondAttribute="height" multiplier="0.348884" id="UlW-MP-vNn"/>
+                            <constraint firstItem="Qts-MW-bgW" firstAttribute="height" secondItem="tPV-Tw-Gje" secondAttribute="height" multiplier="0.3" id="UlW-MP-vNn"/>
                             <constraint firstItem="Qts-MW-bgW" firstAttribute="width" secondItem="tPV-Tw-Gje" secondAttribute="width" multiplier="0.741546" id="d6q-DX-irH"/>
                         </constraints>
                     </view>

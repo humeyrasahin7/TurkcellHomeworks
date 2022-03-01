@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C256263827CE8AC0003C3AE5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C256263727CE8AC0003C3AE5 /* FirstViewController.swift */; };
+		C256263A27CE8AC9003C3AE5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C256263927CE8AC9003C3AE5 /* SecondViewController.swift */; };
+		C256263C27CE8AD4003C3AE5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C256263B27CE8AD4003C3AE5 /* ThirdViewController.swift */; };
+		C256264027CE941E003C3AE5 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C256263F27CE941D003C3AE5 /* CustomTabbar.swift */; };
 		C2B7959D27CD158100A19A2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7959C27CD158100A19A2F /* AppDelegate.swift */; };
 		C2B7959F27CD158100A19A2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7959E27CD158100A19A2F /* SceneDelegate.swift */; };
-		C2B795A127CD158100A19A2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B795A027CD158100A19A2F /* ViewController.swift */; };
 		C2B795A427CD158100A19A2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B795A227CD158100A19A2F /* Main.storyboard */; };
 		C2B795A627CD158300A19A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B795A527CD158300A19A2F /* Assets.xcassets */; };
 		C2B795A927CD158300A19A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B795A727CD158300A19A2F /* LaunchScreen.storyboard */; };
-		C2B795B127CD166600A19A2F /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B795B027CD166600A19A2F /* TabbarViewController.swift */; };
-		C2B795B427CD168800A19A2F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B795B327CD168800A19A2F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C256263727CE8AC0003C3AE5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		C256263927CE8AC9003C3AE5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		C256263B27CE8AD4003C3AE5 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		C256263F27CE941D003C3AE5 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		C2B7959927CD158100A19A2F /* week07.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week07.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B7959C27CD158100A19A2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B7959E27CD158100A19A2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2B795A027CD158100A19A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C2B795A327CD158100A19A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2B795A527CD158300A19A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B795A827CD158300A19A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B795AA27CD158300A19A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2B795B027CD166600A19A2F /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
-		C2B795B327CD168800A19A2F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B795B227CD167300A19A2F /* views */,
-				C2B795B727CD1AE700A19A2F /* CustomTabBar */,
+				C256263F27CE941D003C3AE5 /* CustomTabbar.swift */,
 				C2B7959C27CD158100A19A2F /* AppDelegate.swift */,
 				C2B7959E27CD158100A19A2F /* SceneDelegate.swift */,
 				C2B795A227CD158100A19A2F /* Main.storyboard */,
@@ -75,18 +77,11 @@
 		C2B795B227CD167300A19A2F /* views */ = {
 			isa = PBXGroup;
 			children = (
-				C2B795A027CD158100A19A2F /* ViewController.swift */,
-				C2B795B027CD166600A19A2F /* TabbarViewController.swift */,
-				C2B795B327CD168800A19A2F /* MapViewController.swift */,
+				C256263727CE8AC0003C3AE5 /* FirstViewController.swift */,
+				C256263927CE8AC9003C3AE5 /* SecondViewController.swift */,
+				C256263B27CE8AD4003C3AE5 /* ThirdViewController.swift */,
 			);
 			path = views;
-			sourceTree = "<group>";
-		};
-		C2B795B727CD1AE700A19A2F /* CustomTabBar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,10 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2B795B127CD166600A19A2F /* TabbarViewController.swift in Sources */,
-				C2B795A127CD158100A19A2F /* ViewController.swift in Sources */,
+				C256264027CE941E003C3AE5 /* CustomTabbar.swift in Sources */,
+				C256263A27CE8AC9003C3AE5 /* SecondViewController.swift in Sources */,
+				C256263827CE8AC0003C3AE5 /* FirstViewController.swift in Sources */,
+				C256263C27CE8AD4003C3AE5 /* ThirdViewController.swift in Sources */,
 				C2B7959D27CD158100A19A2F /* AppDelegate.swift in Sources */,
-				C2B795B427CD168800A19A2F /* MapViewController.swift in Sources */,
 				C2B7959F27CD158100A19A2F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

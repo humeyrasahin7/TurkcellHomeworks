@@ -7,6 +7,7 @@ ________
 ## Properties
 - **Onboarding Screen:** Onboarding Screen only shows up when the application first launched, changes its pages automatically you can change pages manually too.
 - **Entry Secreen:** You can't continue if you didn't enter all of informations above
+- **ID:** You can't enter more than 11 digits for your id number.
 
 <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/BusTicket/Screenshots/entryScreen.PNG" width="300" height="690"> <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/BusTicket/Screenshots/noInfo.PNG" width="300" height="690">
 - **Date Selection:** You can't choose any date and time before current date and time

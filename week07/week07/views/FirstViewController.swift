@@ -15,9 +15,7 @@ class FirstViewController: UIViewController {
         
     }
     
-    func configTabbar(){
-        
-    }
+
 
 
 }

@@ -23,9 +23,8 @@ class GameListViewController: UIViewController {
                 
                 for result in self.games.results{
                     let urlString = result?.background_image
-                    print(urlString!)
-                    
-                    self.load(url: URL(string: (result?.background_image)!)! , complete: { image in
+                                        
+                    self.load(url: URL(string: (urlString)!)! , complete: { image in
                        
                         self.downLoadedImageList[(result?.id)!] = image
                         self.collectionView.reloadData()
@@ -43,18 +42,20 @@ class GameListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DetailViewController.favoriteGames = DetailViewController.userDefaults.value(forKey: "favGames") as? [Int] ?? [Int]()
+        print(DetailViewController.favoriteGames)
         initCollectionView(collectionView: collectionView)
         initCollectionView(collectionView: bannerCollectionView)
        
         pageController.addTarget(self, action: #selector(pageControlValueChanged(_:)), for: .valueChanged)
         gameRequest.getGames { result in
-            print(result)
+            
             switch result{
             case .success(let games):
                 self.games = games
             case .failure(let error):
                 print(error.localizedDescription)
-                print(error)
+               
     
             }
         }
@@ -101,26 +102,9 @@ extension GameListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailRequest = GameDetailRequest(slug: (games.results[indexPath.row]?.slug)!)
-        detailRequest.getDetail { [self] result in
-            switch result{
-            case .success(let detail):
-                self.detail = detail
-                DispatchQueue.main.async {
-                    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailVC") as? DetailViewController else {return}
-                    vc.detail = detail
-        
-                    print(detail)
-                    self.navigationController?.pushViewController(vc, animated: true)
-                  
-                }
-               
-            case .failure(let error):
-                print(error.localizedDescription)
-                print(error)
-    
-            }
-        }
+        let game = games.results[indexPath.row]
+        let detailRequest = GameDetailRequest(slug: (game?.slug!)!)
+        openDetail(detailRequest: detailRequest)
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

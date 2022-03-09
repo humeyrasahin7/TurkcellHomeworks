@@ -18,4 +18,5 @@ struct Game: Codable{
     let slug: String?
     let background_image: String?
     let rating: Double?
+    
 }

@@ -14,4 +14,6 @@ struct Detail: Codable{
     let background_image: String?
     let description_raw: String?
     let rating: Double?
+    let id: Int?
+    
 }

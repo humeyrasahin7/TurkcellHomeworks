@@ -18,34 +18,31 @@
                         <rect key="frame" x="8" y="10" width="133" height="130"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating - release date " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-YP-0De">
-                        <rect key="frame" x="155" y="97" width="366" height="45"/>
-                        <color key="backgroundColor" red="0.54901960780000003" green="0.79607843140000001" blue="0.82352941180000006" alpha="0.80550289740000003" colorSpace="custom" customColorSpace="displayP3"/>
+                        <rect key="frame" x="155" y="110" width="366" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-kr-V81">
-                        <rect key="frame" x="155" y="8" width="366" height="45"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="155" y="10" width="366" height="75"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.90588235859999999" green="0.92941176889999999" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="HfW-YP-0De" secondAttribute="bottom" constant="8" id="6lz-xV-CJf"/>
+                <constraint firstItem="HfW-YP-0De" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.2" id="HPY-42-KaN"/>
                 <constraint firstItem="rW2-Fw-TzQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="I09-Cw-60f"/>
                 <constraint firstAttribute="trailing" secondItem="hkf-kr-V81" secondAttribute="trailing" constant="10" id="Kc7-zz-1oF"/>
-                <constraint firstItem="hkf-kr-V81" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.3" id="LX1-C7-N2Q"/>
+                <constraint firstItem="hkf-kr-V81" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.5" id="LX1-C7-N2Q"/>
                 <constraint firstItem="hkf-kr-V81" firstAttribute="leading" secondItem="rW2-Fw-TzQ" secondAttribute="trailing" constant="14" id="QjL-VG-gfB"/>
                 <constraint firstAttribute="bottom" secondItem="rW2-Fw-TzQ" secondAttribute="bottom" constant="10" id="SF5-xO-KIT"/>
                 <constraint firstItem="rW2-Fw-TzQ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="aHb-e6-yqE"/>
                 <constraint firstItem="HfW-YP-0De" firstAttribute="leading" secondItem="hkf-kr-V81" secondAttribute="leading" id="dRI-zK-l38"/>
-                <constraint firstItem="HfW-YP-0De" firstAttribute="height" secondItem="hkf-kr-V81" secondAttribute="height" id="e1P-yj-l9M"/>
                 <constraint firstItem="HfW-YP-0De" firstAttribute="trailing" secondItem="hkf-kr-V81" secondAttribute="trailing" id="ocT-aC-CSi"/>
-                <constraint firstItem="hkf-kr-V81" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="omn-WI-jiy"/>
+                <constraint firstItem="hkf-kr-V81" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="omn-WI-jiy"/>
+                <constraint firstAttribute="bottom" secondItem="HfW-YP-0De" secondAttribute="bottom" constant="10" id="opN-SF-eWl"/>
                 <constraint firstItem="rW2-Fw-TzQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="xhC-Dh-DOd"/>
                 <constraint firstItem="rW2-Fw-TzQ" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.25" id="zC4-eI-O6K"/>
             </constraints>

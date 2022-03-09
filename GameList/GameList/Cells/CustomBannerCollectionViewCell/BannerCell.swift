@@ -13,6 +13,7 @@ class BannerCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bannerImage.layer.cornerRadius = 15
     }
 
 }

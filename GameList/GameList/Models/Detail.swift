@@ -15,5 +15,6 @@ struct Detail: Codable{
     let description_raw: String?
     let rating: Double?
     let id: Int?
+    let metacritic: Int?
     
 }

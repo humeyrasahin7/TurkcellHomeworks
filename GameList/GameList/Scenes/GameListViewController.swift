@@ -13,10 +13,17 @@ class GameListViewController: UIViewController {
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var pageController: UIPageControl!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     private var downLoadedImageList = [Int:UIImage]()
+    
+    @IBOutlet weak var gameListStackView: UICollectionView!
+    @IBOutlet weak var bannerStackView: UIStackView!
     
     var currentPageIndex = 0
     var image = UIImage()
+    var filteredGames = [Game?]()
+    var isFiltering = false
+    var myFirstSize = CGSize()
     var games = Games(){
         didSet{
             DispatchQueue.main.async {
@@ -32,24 +39,28 @@ class GameListViewController: UIViewController {
                         
                     })
                 }
+                Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.imageChange), userInfo: nil, repeats: true)
+                self.pageController.addTarget(self, action: #selector(self.pageControlValueChanged(_:)), for: .valueChanged)
             }
         }
     }
     
     
     
+    
     let gameRequest = GameListRequest()
     var detail: Detail?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DetailViewController.favoriteGames = DetailViewController.userDefaults.value(forKey: "favGames") as? [Int] ?? [Int]()
-        print(DetailViewController.favoriteGames)
+        
         initCollectionView(collectionView: collectionView)
         initCollectionView(collectionView: bannerCollectionView)
-       
-        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.imageChange), userInfo: nil, repeats: true)
-        pageController.addTarget(self, action: #selector(pageControlValueChanged(_:)), for: .valueChanged)
+        myFirstSize = CGSize(width: view.frame.width * 0.95, height: gameListStackView.frame.height * 0.23)
+        
+        searchBar.delegate = self
         
         gameRequest.getGames { result in
             
@@ -63,6 +74,7 @@ class GameListViewController: UIViewController {
             }
         }
     }
+    
     
     @objc func imageChange(_ sender: UIPageControl){
         
@@ -90,12 +102,14 @@ class GameListViewController: UIViewController {
         if collectionView == bannerCollectionView{
             collectionView.register(UINib(nibName: "BannerCell", bundle: nil), forCellWithReuseIdentifier: "bannerCell")
         } else{
+            
             collectionView.register(UINib(nibName: "GameInformationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "gameCell")
             collectionView.translatesAutoresizingMaskIntoConstraints = false
         }
        
     }
 }
+
  //MARK: CollectionView Delegate and Datasource
 
 extension GameListViewController: UICollectionViewDataSource, UICollectionViewDelegate{
@@ -110,6 +124,15 @@ extension GameListViewController: UICollectionViewDataSource, UICollectionViewDe
             }
             return rowCount
         }
+        
+        if isFiltering{
+            if filteredGames.count == 0{
+                return 1
+            } else {
+                return filteredGames.count
+            }
+        }
+            
             return downLoadedImageList.count
     }
     
@@ -119,14 +142,26 @@ extension GameListViewController: UICollectionViewDataSource, UICollectionViewDe
         openDetail(detailRequest: detailRequest)
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let game = games.results[indexPath.row]
+        let game : Game!
         if (collectionView == bannerCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerCell", for: indexPath) as! BannerCell
+            game = games.results[indexPath.row]
             cell.bannerImage.image = downLoadedImageList[(game?.id)!]
             return cell
         }
         
+        if isFiltering{
+            if filteredGames.count == 0{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noDataCell", for: indexPath) as! NoDataCollectionViewCell
+                return cell
+            } else {
+                game = filteredGames[indexPath.row]
+            }
+        } else {
+            game = games.results[indexPath.row]
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as! GameInformationCollectionViewCell
         
         cell.image.image = downLoadedImageList[(game?.id)!]
@@ -145,7 +180,23 @@ extension GameListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 }
 
+//MARK: SearchBar Delegate
 
+extension GameListViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            isFiltering = false
+            self.collectionView.reloadData()
+        } else if searchText.count >= 3 {
+            filteredGames = games.results.filter({ (game: Game!) -> Bool in
+                return (game.name?.lowercased().contains(searchText.lowercased()))!
+            })
+            isFiltering = true
+            self.collectionView.reloadData()
+        }
+        bannerStackView.isHidden = isFiltering
+    }
+}
 
 
 

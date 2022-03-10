@@ -9,9 +9,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var gameInfoView: UIView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateAndRateLabel: UILabel!
+    @IBOutlet weak var metacriticRateLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var addFavButton: UIButton!
     
@@ -41,12 +43,30 @@ class DetailViewController: UIViewController {
         self.load(url: URL(string: (detail.background_image!))!, complete: { image in
             self.image.image = image
         })
+        configDetailView()
         nameLabel.text = detail.name
-        dateAndRateLabel.text = "\(detail.rating!) - \(detail.released!)"
+        releaseDateLabel.text = "\(detail.released!)"
+        metacriticRateLabel.text = "\(detail.metacritic!)"
         descriptionText.text = detail.description_raw
         }
     
+    func configDetailView(){
+        gameInfoView.layer.cornerRadius = 5
+        gameInfoView.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
+        gameInfoView.layer.borderWidth = 1
+        gameInfoView.backgroundColor = #colorLiteral(red: 1, green: 0.3660359383, blue: 0.4177060127, alpha: 0.716861548)
+        image.layer.cornerRadius = 5
+        image.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
+        image.layer.borderWidth = 3
+        descriptionText.layer.cornerRadius = 5
+        descriptionText.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
+        descriptionText.layer.borderWidth = 1
+        descriptionText.backgroundColor = #colorLiteral(red: 1, green: 0.3660359383, blue: 0.4177060127, alpha: 0.716861548)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         DetailViewController.favoriteGames = DetailViewController.userDefaults.value(forKey: "favGames") as? [Int] ?? [Int]()
         guard let detail = detail else { return }
         if DetailViewController.favoriteGames.contains(detail.id!){
@@ -63,13 +83,8 @@ class DetailViewController: UIViewController {
             addFavButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
-   /* override func viewWillDisappear(_ animated: Bool) {
-        DetailViewController.userDefaults.set(DetailViewController.favoriteGames, forKey: "favGames")
-        print(DetailViewController.favoriteGames)
-    }*/
-    
+
     @IBAction func addFavTapped(_ sender: UIButton) {
-        print(DetailViewController.favoriteGames.count)
         if DetailViewController.favoriteGames.contains((detail?.id)!){
             addFavButton.setImage(UIImage(systemName: "heart"), for: .normal)
             DetailViewController.favoriteGames.remove(at: DetailViewController.favoriteGames.firstIndex(of: (detail?.id)!)!)

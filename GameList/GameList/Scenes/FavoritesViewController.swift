@@ -76,11 +76,20 @@ class FavoritesViewController: UIViewController {
 
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if favoriteGames.count == 0{
+            return 1
+        }
         return favoriteGames.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if favoriteGames.count == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noDataCell", for: indexPath) as! NoDataCollectionViewCell
+            return cell
+        }
+        
         let game = favoriteGames[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as! GameInformationCollectionViewCell
         cell.image.image = downLoadedImageList[(game.id)!]
@@ -99,6 +108,9 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
 
 extension FavoritesViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width * 0.95, height: collectionView.frame.height * 0.2)
+        if favoriteGames.count == 0{
+            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height )
+        }
+        return CGSize(width: collectionView.frame.width * 0.95, height: collectionView.frame.height * 0.15)
     }
 }

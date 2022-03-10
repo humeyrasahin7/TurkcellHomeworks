@@ -17,16 +17,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGo-Le-cCF">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="150"/>
+                        <rect key="frame" x="5" y="5" width="325" height="140"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="LGo-Le-cCF" secondAttribute="trailing" id="4zf-5r-RVW"/>
-                <constraint firstItem="LGo-Le-cCF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7Ht-ZZ-JEe"/>
-                <constraint firstAttribute="bottom" secondItem="LGo-Le-cCF" secondAttribute="bottom" id="HoT-DO-gRp"/>
-                <constraint firstItem="LGo-Le-cCF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bnH-3n-sWg"/>
+                <constraint firstAttribute="trailing" secondItem="LGo-Le-cCF" secondAttribute="trailing" constant="5" id="4zf-5r-RVW"/>
+                <constraint firstItem="LGo-Le-cCF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="7Ht-ZZ-JEe"/>
+                <constraint firstAttribute="bottom" secondItem="LGo-Le-cCF" secondAttribute="bottom" constant="5" id="HoT-DO-gRp"/>
+                <constraint firstItem="LGo-Le-cCF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="bnH-3n-sWg"/>
             </constraints>
             <size key="customSize" width="335" height="150"/>
             <connections>

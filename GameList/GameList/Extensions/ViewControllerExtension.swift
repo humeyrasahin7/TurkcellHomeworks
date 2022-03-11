@@ -24,6 +24,17 @@ extension UIViewController {
         }
     }
     
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    
     func openDetail(detailRequest: GameDetailRequest){
         var details: Detail?
         detailRequest.getDetail { [self] result in
@@ -37,32 +48,15 @@ extension UIViewController {
                     vc.title = "Details"
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
-               
+                
             case .failure(let error):
                 print(error.localizedDescription)
-    
+                
             }
         }
     }
     
 }
-extension GameListViewController: UICollectionViewDelegateFlowLayout{
-   
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if (collectionView == bannerCollectionView){
-            return CGSize(width: collectionView.frame.width , height: collectionView.frame.height )
-        }
-        if isFiltering{
-            if filteredGames.count == 0{
-                return CGSize(width: gameListStackView.frame.width , height: gameListStackView.frame.height )
-            }
-            return CGSize(width: gameListStackView.frame.width * 0.95, height: gameListStackView.frame.height * 0.2 )
-        } else {
-            return myFirstSize
-        }
-        
-    }
-}
+
 
 

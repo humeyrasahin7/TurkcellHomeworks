@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     static var favoriteGames = [Int]()
     static let userDefaults = UserDefaults.standard
  
+    //MARK: View Did Load
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,20 +51,8 @@ class DetailViewController: UIViewController {
         descriptionText.text = detail.description_raw
         }
     
-    func configDetailView(){
-        gameInfoView.layer.cornerRadius = 5
-        gameInfoView.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
-        gameInfoView.layer.borderWidth = 1
-        gameInfoView.backgroundColor = #colorLiteral(red: 1, green: 0.3660359383, blue: 0.4177060127, alpha: 0.716861548)
-        image.layer.cornerRadius = 5
-        image.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
-        image.layer.borderWidth = 3
-        descriptionText.layer.cornerRadius = 5
-        descriptionText.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
-        descriptionText.layer.borderWidth = 1
-        descriptionText.backgroundColor = #colorLiteral(red: 1, green: 0.3660359383, blue: 0.4177060127, alpha: 0.716861548)
-        
-    }
+
+    //MARK: View Will Appear
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -100,6 +89,20 @@ class DetailViewController: UIViewController {
         DetailViewController.userDefaults.set(DetailViewController.favoriteGames, forKey: "favGames")
     }
     
+    func configDetailView(){
+        gameInfoView.layer.cornerRadius = 5
+        gameInfoView.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
+        gameInfoView.layer.borderWidth = 1
+        gameInfoView.backgroundColor = #colorLiteral(red: 1, green: 0.3660359383, blue: 0.4177060127, alpha: 0.716861548)
+        image.layer.cornerRadius = 5
+        image.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
+        image.layer.borderWidth = 3
+        descriptionText.layer.cornerRadius = 5
+        descriptionText.layer.borderColor = #colorLiteral(red: 0.531162262, green: 0.3038557768, blue: 0.3615435958, alpha: 0.6473509934)
+        descriptionText.layer.borderWidth = 1
+        descriptionText.backgroundColor = #colorLiteral(red: 1, green: 0.3660359383, blue: 0.4177060127, alpha: 0.716861548)
+        
+    }
     }
     
 

@@ -17,9 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" translatesAutoresizingMaskIntoConstraints="NO" id="ZZz-8y-8oB">
+                            <searchBar contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="ZZz-8y-8oB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="71.5"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <color key="tintColor" red="0.51978772100000004" green="0.00067490319000000003" blue="0.1185740315" alpha="0.80274730959999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.51978772100000004" green="0.00067490319000000003" blue="0.1185740315" alpha="0.80274730959999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-HE-oID">
                                 <rect key="frame" x="0.0" y="159.5" width="414" height="653.5"/>
@@ -28,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zyc-tM-juJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="212"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.95102959440000001" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <viewLayoutGuide key="contentLayoutGuide" id="yvH-hd-zxn"/>
                                                 <viewLayoutGuide key="frameLayoutGuide" id="qgN-zF-ppv"/>
@@ -40,7 +42,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Qza-2a-cz7" customClass="BannerCell" customModule="GameList" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="290" height="110"/>
+                                                        <rect key="frame" x="0.0" y="51" width="290" height="110"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="290" height="110"/>
@@ -55,12 +57,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="qJq-D0-xDx"/>
                                                 </constraints>
-                                                <color key="pageIndicatorTintColor" red="0.60079308710000001" green="0.0" blue="0.23596544890000001" alpha="0.68436982619999998" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="currentPageIndicatorTintColor" red="0.54901960780000003" green="0.79607843140000001" blue="0.82352941180000006" alpha="0.80550289740000003" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="pageIndicatorTintColor" red="0.51978772095959602" green="0.00067490319001811629" blue="0.11857403151418232" alpha="0.80274730960264906" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="0.47291494210000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </pageControl>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="RU0-UX-3VX" firstAttribute="top" secondItem="Zyc-tM-juJ" secondAttribute="bottom" constant="2" id="4JE-ey-ido"/>
+                                            <constraint firstItem="RU0-UX-3VX" firstAttribute="top" secondItem="Zyc-tM-juJ" secondAttribute="bottom" id="4JE-ey-ido"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jex-wE-nBX">
@@ -126,7 +128,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Video Games" id="QsO-zo-LGL"/>
                     <connections>
-                        <outlet property="bannerCollectionView" destination="Zyc-tM-juJ" id="Oo6-7F-hhB"/>
+                        <outlet property="bannerCollectionView" destination="Zyc-tM-juJ" id="Udd-al-EqR"/>
                         <outlet property="bannerStackView" destination="uKz-3s-owK" id="zzD-ki-4Kh"/>
                         <outlet property="collectionView" destination="uzP-lW-L4i" id="4uh-bZ-mff"/>
                         <outlet property="gameListStackView" destination="uzP-lW-L4i" id="TlK-AY-6Oo"/>
@@ -320,6 +322,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pNp-iN-giK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.51978772100000004" green="0.00067490319000000003" blue="0.1185740315" alpha="0.80274730959999996" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.51978772100000004" green="0.00067490319000000003" blue="0.1185740315" alpha="0.80274730959999996" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -338,7 +342,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="J6h-DW-lDY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" red="0.28374908199999999" green="0.0" blue="0.061633043179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.51978772100000004" green="0.00067490319000000003" blue="0.1185740315" alpha="0.80274730959999996" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="h3a-ex-bmH" kind="relationship" relationship="viewControllers" id="OmM-We-fBi"/>
@@ -354,12 +358,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Xr-Ed-rIr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite Games" image="heart.fill" catalog="system" id="Rde-ap-F9b">
-                        <color key="badgeColor" red="0.28374908199999999" green="0.0" blue="0.061633043179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="badgeColor" red="0.51978772100000004" green="0.00067490319000000003" blue="0.1185740315" alpha="0.80274730959999996" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dVx-4m-P7f">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.51978772100000004" green="0.00067490319000000003" blue="0.1185740315" alpha="0.80274730959999996" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -41,7 +41,7 @@ class GameListViewController: UIViewController {
                         
                     })
                 }
-              //  Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.imageChange), userInfo: nil, repeats: true)
+               Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.imageChange), userInfo: nil, repeats: true)
                 self.pageController.addTarget(self, action: #selector(self.pageControlValueChanged(_:)), for: .valueChanged)
             }
         }

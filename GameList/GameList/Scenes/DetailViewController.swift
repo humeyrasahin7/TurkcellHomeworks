@@ -67,7 +67,6 @@ class DetailViewController: UIViewController {
         switch isFavorite{
         case true:
             addFavButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            //addFavButton.imageView?.image = UIImage(systemName: "heart.fill")
         default:
             addFavButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
@@ -84,7 +83,6 @@ class DetailViewController: UIViewController {
             DetailViewController.favoriteGames.append(detail!.id!)
             
         }
-        
         isFavorite = !isFavorite
         DetailViewController.userDefaults.set(DetailViewController.favoriteGames, forKey: "favGames")
     }
@@ -103,6 +101,6 @@ class DetailViewController: UIViewController {
         descriptionText.backgroundColor = #colorLiteral(red: 1, green: 0.3660359383, blue: 0.4177060127, alpha: 0.716861548)
         
     }
-    }
     
-
+    
+}

@@ -9,6 +9,8 @@ import UIKit
 
 class PostCommentsViewController: UIViewController {
 
+    var postId: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

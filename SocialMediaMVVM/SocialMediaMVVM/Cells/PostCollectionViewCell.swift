@@ -9,8 +9,6 @@ import UIKit
 
 class PostCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var postTitle: UILabel!
-    
-    @IBAction func showMoreTapped(_ sender: Any) {
-    }
-    
+    @IBOutlet weak var showMoreButton: UIButton!
+    var post: Post?
 }

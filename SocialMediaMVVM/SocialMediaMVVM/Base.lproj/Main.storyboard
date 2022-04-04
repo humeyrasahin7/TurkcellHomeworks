@@ -198,7 +198,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="326" height="101.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYc-G9-CND">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYc-G9-CND">
                                                     <rect key="frame" x="0.0" y="0.0" width="326" height="101.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyh-nu-QJI">
@@ -217,9 +217,6 @@
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="tinted" title="Show More" cornerStyle="capsule"/>
-                                                            <connections>
-                                                                <action selector="showMoreTapped:" destination="718-qH-hRc" eventType="touchUpInside" id="Kiy-l2-oXr"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -241,6 +238,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="postTitle" destination="kyh-nu-QJI" id="7Sy-LI-Z0K"/>
+                                            <outlet property="showMoreButton" destination="Obh-8V-b6b" id="k89-1P-s9W"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -266,7 +264,7 @@
         <!--Post Details View Controller-->
         <scene sceneID="rdg-cp-0X5">
             <objects>
-                <viewController id="3Jl-UA-gjv" customClass="PostDetailsViewController" customModule="SocialMediaMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="postDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Jl-UA-gjv" customClass="PostDetailsViewController" customModule="SocialMediaMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QFP-qu-HMc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,7 +289,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcH-uN-dRc">
                                                     <rect key="frame" x="0.0" y="0.0" width="333" height="192"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-tW-xPB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-tW-xPB">
                                                             <rect key="frame" x="51.5" y="30" width="230" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="230" id="gmt-EA-WlM"/>
@@ -300,22 +298,19 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPx-Hx-MB8">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPx-Hx-MB8">
                                                             <rect key="frame" x="51.5" y="80.5" width="230" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YW-tO-ObS">
-                                                            <rect key="frame" x="96.5" y="131" width="140" height="31"/>
+                                                            <rect key="frame" x="91.5" y="131" width="150" height="31"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="140" id="cO4-NS-LHW"/>
+                                                                <constraint firstAttribute="width" constant="150" id="cO4-NS-LHW"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="tinted" title="Read Comments" cornerStyle="capsule"/>
-                                                            <connections>
-                                                                <action selector="readCommentsTapped:" destination="8Nv-12-3BZ" eventType="touchUpInside" id="W4z-jY-mrh"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -341,6 +336,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="body" destination="sPx-Hx-MB8" id="8yx-NA-gwQ"/>
+                                            <outlet property="readCommentsButton" destination="9YW-tO-ObS" id="o18-JG-MbC"/>
                                             <outlet property="title" destination="M7M-tW-xPB" id="FXQ-eS-k4j"/>
                                         </connections>
                                     </collectionViewCell>
@@ -367,7 +363,7 @@
         <!--Post Comments View Controller-->
         <scene sceneID="g2u-XO-sCb">
             <objects>
-                <viewController id="Neh-JF-QUb" customClass="PostCommentsViewController" customModule="SocialMediaMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="commentsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Neh-JF-QUb" customClass="PostCommentsViewController" customModule="SocialMediaMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pxR-KK-bQc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,18 +372,30 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eyf-43-g8W">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="386" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JgV-Ci-aL6" customClass="PostCommentsCollectionViewCell" customModule="SocialMediaMVVM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="commentCell" id="JgV-Ci-aL6" customClass="PostCommentsCollectionViewCell" customModule="SocialMediaMVVM" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="0.0" width="386" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lua-3L-Ztt">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="386" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgu-qj-dFq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="386" height="128"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bgu-qj-dFq" firstAttribute="top" secondItem="lua-3L-Ztt" secondAttribute="top" id="aVC-RE-ILy"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bgu-qj-dFq" secondAttribute="trailing" id="edW-lx-dxm"/>
+                                                <constraint firstItem="Bgu-qj-dFq" firstAttribute="leading" secondItem="lua-3L-Ztt" secondAttribute="leading" id="lY2-yT-k5t"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bgu-qj-dFq" secondAttribute="bottom" id="wxe-qg-O7C"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>

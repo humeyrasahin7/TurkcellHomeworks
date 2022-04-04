@@ -59,7 +59,7 @@ extension UserPostsViewModel: UserPostsViewModelProtocol{
     }
     
     func calculateCellSize(collectionViewHeight: Double, collectionViewWidht: Double) -> (width: Double, height: Double) {
-        let cellWidht = collectionViewWidht * 0.90
+        let cellWidht = collectionViewWidht * 0.95
         let cellHeight = collectionViewHeight * 0.2
         return (cellWidht, cellHeight)
     }

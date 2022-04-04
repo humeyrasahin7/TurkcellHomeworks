@@ -57,8 +57,6 @@ extension UserViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "postsVC") as! UserPostsViewController
         vc.userId = (viewModel.user(index: indexPath.row)?.id)!
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overFullScreen
         navigationController?.pushViewController(vc, animated: true)
     }
     

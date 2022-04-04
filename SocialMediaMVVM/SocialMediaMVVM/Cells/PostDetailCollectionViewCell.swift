@@ -10,8 +10,7 @@ import UIKit
 class PostDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var body: UILabel!
+    @IBOutlet weak var readCommentsButton: UIButton!
     
-    @IBAction func readCommentsTapped(_ sender: UIButton) {
-        
-    }
+    var postId: Int!
 }

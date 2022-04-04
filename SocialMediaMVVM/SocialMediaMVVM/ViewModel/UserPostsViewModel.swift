@@ -34,8 +34,6 @@ final class UserPostsViewModel{
                 self.posts = posts
                 self.delegate?.filter()
                 self.delegate?.reloadData()
-                
-              
             case .failure(let error):
                 print(error)
             }

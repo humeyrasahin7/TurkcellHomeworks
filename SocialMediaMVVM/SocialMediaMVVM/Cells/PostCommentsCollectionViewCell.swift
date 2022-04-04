@@ -8,5 +8,7 @@
 import UIKit
 
 class PostCommentsCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var commentTitle: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var commentBody: UILabel!
 }

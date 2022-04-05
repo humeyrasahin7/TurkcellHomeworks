@@ -13,5 +13,8 @@ class UserCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var emailLabel: UILabel!
     
     @IBOutlet weak var userView: UIView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var subView: UIView!
+    
     
 }

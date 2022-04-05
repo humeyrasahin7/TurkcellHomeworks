@@ -13,4 +13,8 @@ class PostDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var readCommentsButton: UIButton!
     
     var postId: Int!
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var subView: UIView!
+    
 }

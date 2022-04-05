@@ -16,6 +16,7 @@ class PostDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Post Details"
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -32,6 +33,8 @@ extension PostDetailsViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postDetailCell", for: indexPath) as! PostDetailCollectionViewCell
+        cell.containerView.configView()
+        cell.subView.configView()
         cell.title.text = post?.title
         cell.body.text = post?.body
         cell.readCommentsButton.tag = (post?.id)!

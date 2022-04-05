@@ -17,7 +17,7 @@ class PostCommentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Post Comments"
         collectionView.delegate = self
         collectionView.dataSource = self
         viewModel.delegate = self
@@ -54,6 +54,9 @@ extension PostCommentsViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let comment = filteredComments[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "commentCell", for: indexPath) as! PostCommentsCollectionViewCell
+        cell.containerView.configView()
+        cell.userInfoView.configView()
+        cell.commentView.configView()
         cell.commentTitle.text = comment.name
         cell.userEmail.text = comment.email
         cell.commentBody.text = comment.body

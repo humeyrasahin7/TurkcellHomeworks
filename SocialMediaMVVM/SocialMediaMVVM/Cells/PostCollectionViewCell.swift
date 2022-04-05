@@ -10,5 +10,9 @@ import UIKit
 class PostCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var showMoreButton: UIButton!
+    
     var post: Post?
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var subView: UIView!
 }

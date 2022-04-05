@@ -9,6 +9,7 @@ import UIKit
 
 class UserViewController: UIViewController {
 
+
     @IBOutlet weak var collectionView: UICollectionView!
     let viewModel = UserViewModel()
     override func viewDidLoad() {
@@ -45,6 +46,9 @@ extension UserViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userCell", for: indexPath) as! UserCollectionViewCell
+        
+        cell.containerView.configView()
+        cell.subView.configView()
         
         if let user = viewModel.user(index: indexPath.row) {
             cell.usernameLabel.text = user.username

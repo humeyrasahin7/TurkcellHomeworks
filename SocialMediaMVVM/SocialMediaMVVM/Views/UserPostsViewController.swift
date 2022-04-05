@@ -57,6 +57,8 @@ extension UserPostsViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCollectionViewCell
+        cell.containerView.configView()
+        cell.subView.configView()
         cell.postTitle.text = filteredPosts[indexPath.row].title
         cell.showMoreButton.tag = indexPath.row
         cell.showMoreButton.addTarget(self, action: #selector(showDetail(_ :)), for: .touchUpInside)

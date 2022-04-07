@@ -16,7 +16,7 @@ class UserPostsViewController: UIViewController {
     var filteredPosts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        customizeNavigationBackButton(title: title!)
         collectionView.delegate = self
         collectionView.dataSource = self
         viewModel.delegate = self

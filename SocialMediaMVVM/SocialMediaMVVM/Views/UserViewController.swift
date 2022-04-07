@@ -12,9 +12,11 @@ class UserViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     let viewModel = UserViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "MyBlog"
+        customizeNavigationBackButton(title: title!)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false

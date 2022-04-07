@@ -16,7 +16,8 @@ class PostDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Post Details"
+        title = "Details"
+        customizeNavigationBackButton(title: title!)
         collectionView.dataSource = self
         collectionView.delegate = self
         

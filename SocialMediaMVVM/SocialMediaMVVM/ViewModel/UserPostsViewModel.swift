@@ -62,7 +62,4 @@ extension UserPostsViewModel: UserPostsViewModelProtocol{
         return (cellWidht, cellHeight)
     }
     
-    
-    
-    
 }

@@ -11,18 +11,25 @@ protocol DetailViewControllerProtocol: AnyObject{
     func reloadData()
     func setupCollectionView()
     func addTabGestureRecog()
+    func setSelectorFunc()
     func addToFavs()
+    func setButtonImg(_ isFav: Bool)
     func setPoster(_ imagePath: String)
     func setTitle(_ title: String)
     func setDescription(_ description: String)
     func setRatingLabel(_ rating: Double)
-    func setReleadeDate(_ date: String)
+    func setReleaseDate(_ date: String)
+
 }
 
 final class DetailViewController: UIViewController {
 
     var presenter: DetailPresenterProtocol!
     
+    var favMovies = [Int]()
+    let userDefaults = UserDefaults.standard
+    
+    @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var desctiptionTextView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -31,22 +38,30 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak var similarCollectionView: UICollectionView!
     @IBOutlet weak var imdbImageView: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "Movie Details"
         presenter.viewDidLoad()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favMovies = userDefaults.value(forKey: "favMovies") as? [Int] ?? [Int]()
+        presenter.viewWillAppear(favMovies)
+    }
+    
     @IBAction func addFavButtonTapped(_ sender: Any) {
-        
+        addToFavs()
+    }
+    
+    @objc func addTapGestureRegocnizerAction(){
+        setSelectorFunc()
     }
     
 }
 
 extension DetailViewController: DetailViewControllerProtocol{
-    func setReleadeDate(_ date: String) {
+    
+    func setReleaseDate(_ date: String) {
         self.releaseDateLabel.text = date
     }
     
@@ -75,6 +90,7 @@ extension DetailViewController: DetailViewControllerProtocol{
     
     func setTitle(_ title: String) {
         self.titleLabel.text = title
+        self.title = title
     }
     
     
@@ -89,13 +105,27 @@ extension DetailViewController: DetailViewControllerProtocol{
     }
     
     func addTabGestureRecog() {
-        print("")
+        let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(addTapGestureRegocnizerAction))
+        imdbImageView.addGestureRecognizer(tapRegoc)
+        imdbImageView.isUserInteractionEnabled = true
     }
     
     func addToFavs() {
-        print("")
+        favMovies = presenter.addToFavs()
+        userDefaults.set(favMovies, forKey: "favMovies")
     }
     
+    func setButtonImg(_ isFav: Bool) {
+        if isFav{
+            favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
+    
+    func setSelectorFunc() {
+        presenter.addGestureRecognizer()
+    }
     
 }
 

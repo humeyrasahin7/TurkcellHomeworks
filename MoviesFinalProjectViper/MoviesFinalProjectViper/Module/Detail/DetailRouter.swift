@@ -28,16 +28,20 @@ final class DetailRouter{
 
 enum DetailRoutes{
     case toDetail(movieID: Int)
+    case toImbdb(imdbID: String)
 }
 
 extension DetailRouter: DetailRouterProtocol{
     func navigate(_ routes: DetailRoutes) {
         switch routes {
         case .toDetail(let movieID):
-            guard let window = viewController?.view.window else {return}
             let detailVC = DetailRouter.createModules(movieID: movieID)
-            let navigationController = UINavigationController(rootViewController: detailVC)
-            window.rootViewController = navigationController
+            self.viewController?.navigationController?.pushViewController(detailVC, animated: true)
+        case .toImbdb(let imdbID):
+            if let url = URL(string: "https://www.imdb.com/title/\(imdbID)") {
+                UIApplication.shared.open(url)
+            }
+            
         }
     }
 }

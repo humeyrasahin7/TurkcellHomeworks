@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="MoviesFinalProjectViper" customModuleProvider="target">
             <connections>
                 <outlet property="desctiptionTextView" destination="b1g-Qe-Uw9" id="2pL-b5-Ryj"/>
+                <outlet property="favButton" destination="DAJ-6I-ggd" id="vLm-Fc-nrl"/>
                 <outlet property="imdbImageView" destination="SZb-Cp-Cl8" id="0qK-zR-CNF"/>
                 <outlet property="posterView" destination="8rZ-iw-zf4" id="1Qk-fO-idK"/>
                 <outlet property="ratingLabel" destination="daq-RA-A6Z" id="32D-pg-PbU"/>
@@ -34,7 +35,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b1g-Qe-Uw9">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1g-Qe-Uw9">
                     <rect key="frame" x="0.0" y="288.5" width="414" height="360.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" systemColor="labelColor"/>
@@ -51,7 +52,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfg-UH-7aH">
                     <rect key="frame" x="0.0" y="659" width="414" height="30"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yıldız" translatesAutoresizingMaskIntoConstraints="NO" id="G1N-MD-DK0">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yildiz" translatesAutoresizingMaskIntoConstraints="NO" id="G1N-MD-DK0">
                             <rect key="frame" x="204" y="2" width="30" height="26"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="R4f-A9-8Ad"/>
@@ -69,7 +70,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imdb" translatesAutoresizingMaskIntoConstraints="NO" id="SZb-Cp-Cl8">
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imdb" translatesAutoresizingMaskIntoConstraints="NO" id="SZb-Cp-Cl8">
                             <rect key="frame" x="324" y="0.0" width="80" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="L1w-jO-pjP"/>
@@ -165,7 +166,7 @@
     <resources>
         <image name="imdb" width="100" height="50"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
-        <image name="yıldız" width="50" height="50"/>
+        <image name="yildiz" width="50" height="50"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -51,14 +51,14 @@ extension NowPlayingCollectionViewCell: NowPlayingCollectionViewCellProtocol{
     }
     
     func setTitle(_ title: String) {
-        let color = #colorLiteral(red: 0.3153917817, green: 0.04432758737, blue: 0.06071960034, alpha: 0.8596078228)
+        let color = #colorLiteral(red: 0.9999375939, green: 0.758449614, blue: 0.02824430354, alpha: 0.9968956954)
         self.titleLabel.text = title
         self.titleLabel.configView(radius: 10, width: 1, borderColor: color.cgColor)
     }
     
     func configCell() {
-        let color = #colorLiteral(red: 0.3252504127, green: 0.04432758737, blue: 0.06071960034, alpha: 1)
-        self.configView(radius: 10, width: 3, borderColor: color.cgColor)
+        let color = #colorLiteral(red: 0.9999375939, green: 0.758449614, blue: 0.02824430354, alpha: 0)
+        self.configView(radius: 5, width: 3, borderColor: color.cgColor)
     }
     
 }

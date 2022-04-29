@@ -24,10 +24,11 @@ final class ListCellPresenter{
 
 extension ListCellPresenter: ListCellPresenterProtocol{
     func load() {
+        let date = dateFormatter(movie.releaseDate!, format: "dd.MM.yyyy")
         view?.setTitle(movie.title ?? "")
         view?.setDescription(movie.overview ?? "")
         view?.setPoster( "https://image.tmdb.org/t/p/original\(movie.posterPath ?? "")")
-        view?.setReleaseDate(movie.releaseDate ?? "")
+        view?.setReleaseDate(date)
         view?.configCell()
     }
     

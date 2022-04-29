@@ -17,11 +17,12 @@ class SplashViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         presenter.viewDidAppear()
     }
-
 
 
 }
@@ -30,8 +31,7 @@ class SplashViewController: BaseViewController {
 extension SplashViewController: SplashViewControllerProtocol {
     
     func noInternetConnection() {
-        /*
-        let vc = SplashViewController()
-        vc.present(showAlert(title: "Error", message: "No Internet Connection, Please check your connection"), animated: true)*/
+       
+       showAlert(title: "Error", message: "No Internet Connection, Please check your connection")
     }
 }

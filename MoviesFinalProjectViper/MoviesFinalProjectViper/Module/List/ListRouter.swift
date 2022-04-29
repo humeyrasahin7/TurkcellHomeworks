@@ -35,11 +35,9 @@ extension ListRouter: ListRouterProtocol{
     func navigate(_ routes: ListRoutes) {
         switch routes {
         case .detail(let movieID):
-            guard let window = viewController?.view.window else {return}
             let detailVC = DetailRouter.createModules(movieID: movieID)
-            
-            let navigationController = UINavigationController(rootViewController: detailVC)
-            window.rootViewController = navigationController
+            self.viewController?.navigationController?.pushViewController(detailVC, animated: true)
+   
         }
     
         

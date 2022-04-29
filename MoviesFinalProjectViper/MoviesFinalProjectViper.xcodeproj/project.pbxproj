@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2415EEC281C80350007FB27 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2415EEA281C80350007FB27 /* SearchTableViewCell.swift */; };
+		C2415EED281C80350007FB27 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2415EEB281C80350007FB27 /* SearchTableViewCell.xib */; };
+		C2415EEF281C816E0007FB27 /* SearchTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2415EEE281C816E0007FB27 /* SearchTableViewCellPresenter.swift */; };
 		C253764F281990F700A7BC97 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C253764D281990F700A7BC97 /* SplashViewController.swift */; };
 		C2537650281990F700A7BC97 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C253764E281990F700A7BC97 /* SplashViewController.xib */; };
 		C25376532819942C00A7BC97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25376512819942C00A7BC97 /* ListViewController.swift */; };
@@ -78,6 +81,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2415EEA281C80350007FB27 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		C2415EEB281C80350007FB27 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		C2415EEE281C816E0007FB27 /* SearchTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellPresenter.swift; sourceTree = "<group>"; };
 		C253764D281990F700A7BC97 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C253764E281990F700A7BC97 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		C25376512819942C00A7BC97 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +166,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2415EE9281C801E0007FB27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2415EEA281C80350007FB27 /* SearchTableViewCell.swift */,
+				C2415EEB281C80350007FB27 /* SearchTableViewCell.xib */,
+				C2415EEE281C816E0007FB27 /* SearchTableViewCellPresenter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C25D3BD82816F14B002366EC /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +385,7 @@
 		C28E85502815E2A500575D31 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				C2415EE9281C801E0007FB27 /* View */,
 				C25D3BD82816F14B002366EC /* Entity */,
 				C2537659281AB39800A7BC97 /* SerachViewController.swift */,
 				C253765A281AB39800A7BC97 /* SerachViewController.xib */,
@@ -528,6 +545,7 @@
 				C25376542819942C00A7BC97 /* ListViewController.xib in Resources */,
 				C25D3C1628186D85002366EC /* ListCollectionViewCell.xib in Resources */,
 				C253765C281AB39800A7BC97 /* SerachViewController.xib in Resources */,
+				C2415EED281C80350007FB27 /* SearchTableViewCell.xib in Resources */,
 				C2537650281990F700A7BC97 /* SplashViewController.xib in Resources */,
 				C25D3C1B28186DA4002366EC /* SimilarMoviesCollectionViewCell.xib in Resources */,
 				C2537668281AEF3300A7BC97 /* DetailViewController.xib in Resources */,
@@ -567,6 +585,7 @@
 				C25D3BDF281700EF002366EC /* ServiceRouter.swift in Sources */,
 				C25376532819942C00A7BC97 /* ListViewController.swift in Sources */,
 				C25D3BD62816D564002366EC /* DetailResponse.swift in Sources */,
+				C2415EEF281C816E0007FB27 /* SearchTableViewCellPresenter.swift in Sources */,
 				C25D3C2028186E71002366EC /* LoadingView.swift in Sources */,
 				C253766C281AEF5700A7BC97 /* DetailInteractor.swift in Sources */,
 				C25D3BDC2816F191002366EC /* SimilarMoviesResponse.swift in Sources */,
@@ -592,6 +611,7 @@
 				C253765B281AB39800A7BC97 /* SerachViewController.swift in Sources */,
 				C253766E281AEF6200A7BC97 /* DetailRouter.swift in Sources */,
 				C25D3C2828187434002366EC /* ListCellPresenter.swift in Sources */,
+				C2415EEC281C80350007FB27 /* SearchTableViewCell.swift in Sources */,
 				C253766A281AEF4B00A7BC97 /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

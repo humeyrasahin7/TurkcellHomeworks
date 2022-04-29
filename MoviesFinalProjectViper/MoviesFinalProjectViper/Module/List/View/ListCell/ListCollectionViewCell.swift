@@ -21,7 +21,7 @@ class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     
-    let color = #colorLiteral(red: 0.5294117647, green: 0.04432758737, blue: 0.06071960034, alpha: 1)
+    let color = #colorLiteral(red: 0.9999375939, green: 0.758449614, blue: 0.02824430354, alpha: 1)
     
     var cellPresenter: ListCellPresenterProtocol!{
         didSet{
@@ -43,7 +43,7 @@ extension ListCollectionViewCell: ListCollectionViewCellProtocol{
     
     func setPoster(_ imagePath: String) {
         let url = URL(string: imagePath)
-        posterView.configView(radius: 10, width: 1, borderColor: color.cgColor)
+        posterView.configView(radius: 5, width: 1, borderColor: color.cgColor)
         posterView.kf.indicatorType = .activity
         posterView.kf.setImage(with: url) { result in
             switch result{
@@ -67,6 +67,6 @@ extension ListCollectionViewCell: ListCollectionViewCellProtocol{
     }
     
     func configCell() {
-        self.configView(radius: 10, width: 1.5, borderColor: color.cgColor)
+        self.configView(radius: 0, width: 1.5, borderColor: color.cgColor)
     }
 }

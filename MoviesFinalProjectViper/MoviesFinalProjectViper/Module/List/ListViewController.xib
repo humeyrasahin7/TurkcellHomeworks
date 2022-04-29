@@ -37,8 +37,8 @@
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-KX-rJl">
                     <rect key="frame" x="0.0" y="252" width="414" height="26"/>
-                    <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="currentPageIndicatorTintColor" red="0.73214709759999996" green="0.4033759401" blue="0.38936833659999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="pageIndicatorTintColor" red="0.20002762988360245" green="0.20002762988360245" blue="0.20002762988360245" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="0.96099525689999998" green="0.75483256580000002" blue="0.088400267059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="v8I-Ny-dzv">
                     <rect key="frame" x="10" y="274" width="394" height="588"/>

@@ -38,6 +38,4 @@ extension ListInteractor: ListInteractorProtocol{
             self.output?.fetchUpcomingMoviesOutput(result: result)
         }
     }
-    
-     
 }

@@ -23,9 +23,10 @@ final class SimilarMoviesCellPresenter{
 
 extension SimilarMoviesCellPresenter: SimilarMoviesCellPresenterProtocol{
     func load() {
+        let year = dateFormatterGetYear(movie.releaseDate!, format: "yyyy")
         view?.setPoster("https://image.tmdb.org/t/p/original\(movie.backdropPath ?? "")")
         view?.setTitle(movie.title ?? "")
-        view?.setReleaseYear(movie.releaseDate ?? "")
+        view?.setReleaseYear(year)
         view?.configCell()
     }
     

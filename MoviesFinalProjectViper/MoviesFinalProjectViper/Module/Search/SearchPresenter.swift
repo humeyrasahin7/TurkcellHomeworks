@@ -20,19 +20,19 @@ final class SearchPresenter{
 
 extension SearchPresenter: SearchPresenterProtocol{
     func viewDidLoad() {
-        <#code#>
+        ///
     }
     
     func numberOfItems() -> Int {
-        <#code#>
+        return 0
     }
     
     func didSelectRowAt(index: Int) {
-        <#code#>
+        //
     }
     
     func movie(_ index: Int) -> MatchingMovie? {
-        <#code#>
+        return nil
     }
     
     

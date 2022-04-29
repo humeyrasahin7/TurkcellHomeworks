@@ -11,6 +11,7 @@ struct DetailResponse: Codable{
     
     let backdropPath: String?
     let imdbID: String?
+    let id: Int?
     let overview: String?
     let voteAverage: Double?
     let title: String?
@@ -18,7 +19,7 @@ struct DetailResponse: Codable{
     let originalTitle: String?
     
     enum CodingKeys: String, CodingKey{
-        case overview, title
+        case overview, title, id
         case voteAverage = "vote_average"
         case releaseDate = "release_date"
         case imdbID = "imdb_id"

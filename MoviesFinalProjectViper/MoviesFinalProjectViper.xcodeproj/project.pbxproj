@@ -14,8 +14,8 @@
 		C2537650281990F700A7BC97 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C253764E281990F700A7BC97 /* SplashViewController.xib */; };
 		C25376532819942C00A7BC97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25376512819942C00A7BC97 /* ListViewController.swift */; };
 		C25376542819942C00A7BC97 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25376522819942C00A7BC97 /* ListViewController.xib */; };
-		C253765B281AB39800A7BC97 /* SerachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2537659281AB39800A7BC97 /* SerachViewController.swift */; };
-		C253765C281AB39800A7BC97 /* SerachViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C253765A281AB39800A7BC97 /* SerachViewController.xib */; };
+		C253765B281AB39800A7BC97 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2537659281AB39800A7BC97 /* SearchViewController.swift */; };
+		C253765C281AB39800A7BC97 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C253765A281AB39800A7BC97 /* SearchViewController.xib */; };
 		C253765E281AB3AA00A7BC97 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C253765D281AB3AA00A7BC97 /* SearchInteractor.swift */; };
 		C2537660281AB3BA00A7BC97 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C253765F281AB3BA00A7BC97 /* SearchPresenter.swift */; };
 		C2537662281AB3C700A7BC97 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2537661281AB3C700A7BC97 /* SearchRouter.swift */; };
@@ -88,8 +88,8 @@
 		C253764E281990F700A7BC97 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		C25376512819942C00A7BC97 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		C25376522819942C00A7BC97 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
-		C2537659281AB39800A7BC97 /* SerachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachViewController.swift; sourceTree = "<group>"; };
-		C253765A281AB39800A7BC97 /* SerachViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SerachViewController.xib; sourceTree = "<group>"; };
+		C2537659281AB39800A7BC97 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C253765A281AB39800A7BC97 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		C253765D281AB3AA00A7BC97 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		C253765F281AB3BA00A7BC97 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		C2537661281AB3C700A7BC97 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -387,8 +387,8 @@
 			children = (
 				C2415EE9281C801E0007FB27 /* View */,
 				C25D3BD82816F14B002366EC /* Entity */,
-				C2537659281AB39800A7BC97 /* SerachViewController.swift */,
-				C253765A281AB39800A7BC97 /* SerachViewController.xib */,
+				C2537659281AB39800A7BC97 /* SearchViewController.swift */,
+				C253765A281AB39800A7BC97 /* SearchViewController.xib */,
 				C253765D281AB3AA00A7BC97 /* SearchInteractor.swift */,
 				C253765F281AB3BA00A7BC97 /* SearchPresenter.swift */,
 				C2537661281AB3C700A7BC97 /* SearchRouter.swift */,
@@ -544,7 +544,7 @@
 				C25D3C0D28186BD8002366EC /* NowPlayingCollectionViewCell.xib in Resources */,
 				C25376542819942C00A7BC97 /* ListViewController.xib in Resources */,
 				C25D3C1628186D85002366EC /* ListCollectionViewCell.xib in Resources */,
-				C253765C281AB39800A7BC97 /* SerachViewController.xib in Resources */,
+				C253765C281AB39800A7BC97 /* SearchViewController.xib in Resources */,
 				C2415EED281C80350007FB27 /* SearchTableViewCell.xib in Resources */,
 				C2537650281990F700A7BC97 /* SplashViewController.xib in Resources */,
 				C25D3C1B28186DA4002366EC /* SimilarMoviesCollectionViewCell.xib in Resources */,
@@ -608,7 +608,7 @@
 				C28E854D2815E24500575D31 /* ServiceManager.swift in Sources */,
 				C25D3C2228186E9F002366EC /* LoadingShowable.swift in Sources */,
 				C28E85542815E6C800575D31 /* NowPlayingResponse.swift in Sources */,
-				C253765B281AB39800A7BC97 /* SerachViewController.swift in Sources */,
+				C253765B281AB39800A7BC97 /* SearchViewController.swift in Sources */,
 				C253766E281AEF6200A7BC97 /* DetailRouter.swift in Sources */,
 				C25D3C2828187434002366EC /* ListCellPresenter.swift in Sources */,
 				C2415EEC281C80350007FB27 /* SearchTableViewCell.swift in Sources */,

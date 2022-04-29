@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+protocol SearchTableViewCellPresenterProtocol: AnyObject{
+    func load()
+}
+
+final class SearchTableViewCellPresenter{
+    weak var view: SearchTableViewCellProtocol?
+    private let movie: MatchingMovie
+    
+    init(view: SearchTableViewCellProtocol, movie: MatchingMovie){
+        self.view = view
+        self.movie = movie
+    }
+}
+
+extension SearchTableViewCellPresenter: SearchTableViewCellPresenterProtocol{
+    func load() {
+        view?.setTitle(movie.title ?? "")
+    }
+    
+    
+}

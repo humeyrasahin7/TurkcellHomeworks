@@ -28,6 +28,4 @@ extension SearchInteractor: SearchInteractorProtocol{
             self.output?.fetchSearchResultOutput(result: result)
         }
     }
-    
-    
 }

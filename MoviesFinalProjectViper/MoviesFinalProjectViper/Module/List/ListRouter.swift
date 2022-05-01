@@ -14,6 +14,7 @@ protocol ListRouterProtocol: AnyObject{
 
 enum ListRoutes{
     case detail(movieID: Int)
+    case searching
 }
 
 final class ListRouter{
@@ -38,8 +39,11 @@ extension ListRouter: ListRouterProtocol{
             let detailVC = DetailRouter.createModules(movieID: movieID)
             self.viewController?.navigationController?.pushViewController(detailVC, animated: true)
    
+        case .searching:
+            let searchResultVC = SearchRouter.createModules()
+            self.viewController?.setSearchController(vc: searchResultVC)
+            
         }
-    
         
     }
     

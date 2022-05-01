@@ -20,6 +20,7 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .clear
         presenter.viewDidLoad()
     }
 
@@ -31,9 +32,11 @@ extension SearchViewController: SearchViewControllerProtocol{
     }
     
     func setupTableView() {
+        tableView.register(cellType: SearchTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(cellType: SearchTableViewCell.self)
+        tableView.backgroundColor = .clear
+        
         
     }
     
@@ -57,5 +60,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelectRowAt(index: indexPath.row)
     }
+    
+}
+
+
+extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate{
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let text = searchBar.text!
+        if text.count >= 2{
+            presenter.fetchSearchResults(query: text)
+        }
+    }
+    
     
 }

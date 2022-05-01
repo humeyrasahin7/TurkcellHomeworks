@@ -12,6 +12,7 @@ protocol SearchPresenterProtocol{
     func numberOfItems() -> Int
     func didSelectRowAt(index: Int)
     func movie(_ index: Int) -> MatchingMovie?
+    func fetchSearchResults(query: String)
 }
 
 final class SearchPresenter{
@@ -20,19 +21,18 @@ final class SearchPresenter{
     unowned var view: SearchViewControllerProtocol?
     let router: SearchRouterProtocol!
     let interactor: SearchInteractorProtocol!
-    let query: String
-    init(view: SearchViewControllerProtocol, router: SearchRouterProtocol, interactor: SearchInteractorProtocol, query: String){
+    
+        
+    init(view: SearchViewControllerProtocol, router: SearchRouterProtocol, interactor: SearchInteractorProtocol){
         self.view = view
         self.router = router
         self.interactor = interactor
-        self.query = query
     }
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
     func viewDidLoad() {
         view?.setupTableView()
-        fetchSearchResults()
     }
     
     func numberOfItems() -> Int {
@@ -48,7 +48,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         return movies[safe: index]
     }
     
-    private func fetchSearchResults(){
+    func fetchSearchResults(query: String){
         interactor.fetchSearchResult(query: query)
     }
     

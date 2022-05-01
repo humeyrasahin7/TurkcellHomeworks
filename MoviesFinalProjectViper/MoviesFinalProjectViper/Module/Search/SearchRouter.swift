@@ -18,11 +18,11 @@ enum SearchRoutes{
 final class SearchRouter{
     weak var viewController: SearchViewController?
     
-    static func createModules(query: String) -> SearchViewController{
+    static func createModules() -> SearchViewController{
         let view = SearchViewController()
         let interactor = SearchInteractor()
         let router = SearchRouter()
-        let presenter = SearchPresenter(view: view, router: router, interactor: interactor, query: query)
+        let presenter = SearchPresenter(view: view, router: router, interactor: interactor)
         view.presenter = presenter
         interactor.output = presenter
         router.viewController = view

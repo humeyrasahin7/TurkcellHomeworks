@@ -18,6 +18,7 @@ protocol ListPresenterProtocol: AnyObject{
     func setSelectorFunc(sender: UIPageControl, collectionView: UICollectionView)
     func setTimerSelectorFunc(sender: UIPageControl, collectionView: UICollectionView)
     func didScroll(_ scrollView: UIScrollView, pageController: UIPageControl)
+
 }
 
 enum ClickedCollectionView{
@@ -42,11 +43,13 @@ final class ListPresenter{
 }
 
 extension ListPresenter: ListPresenterProtocol{
+
     func viewDidLoad() {
         interactor.fetchUpcomingMovies()
         interactor.fetchNowPlayingMovies()
         view?.setupCollectionView()
         view?.setupPageController()
+        router.navigate(.searching)
     }
     
     func numberOfItemsNP() -> Int {

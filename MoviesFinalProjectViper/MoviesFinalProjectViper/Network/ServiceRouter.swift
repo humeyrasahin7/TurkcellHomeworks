@@ -74,10 +74,8 @@ enum ServiceRouter: URLRequestConvertible{
             }else {
                 return ""
             }
-        case .search( _):
-            //if let query = query {
-                return "search/movie?"
-            //}
+        case .search(_):
+                return "search/movie"
         }
     }
     
@@ -102,7 +100,7 @@ enum ServiceRouter: URLRequestConvertible{
         
         completeParameters["api_key"] = ServiceRouter.api_key
         
-        let urlReq = try encoding.encode(urlRequest, with: completeParameters)
+        //let urlReq = try encoding.encode(urlRequest, with: completeParameters)
         return try encoding.encode(urlRequest, with: completeParameters)
     }
 }

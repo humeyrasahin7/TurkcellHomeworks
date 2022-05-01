@@ -14,6 +14,7 @@ protocol ListViewControllerProtocol: AnyObject{
     func setupPageController()
     func setSelectorFunc()
     func setTimerSelectorFunc()
+    func setSearchController(vc: SearchViewController)
 }
 
 
@@ -25,9 +26,11 @@ final class ListViewController: UIViewController {
     
     var presenter: ListPresenterProtocol!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Movies"
         presenter.viewDidLoad()
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(imageChange), userInfo: nil, repeats: true)
@@ -43,8 +46,16 @@ final class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListViewControllerProtocol{
-  
-    
+    func setSearchController(vc: SearchViewController) {
+        let searchController = UISearchController(searchResultsController: vc)
+        searchController.searchBar.placeholder = "Search a Movie"
+        searchController.obscuresBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        searchController.searchResultsUpdater = vc
+        searchController.searchBar.delegate = vc
+        navigationItem.searchController = searchController
+    }
+
     func reloadData() {
         self.upcomingCollectionView.reloadData()
         self.nowPlayingCollectionView.reloadData()
@@ -128,3 +139,4 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
 }
+

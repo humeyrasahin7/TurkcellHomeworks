@@ -7,96 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AC526CBE-1E4A-4985-8B33-1B92FEA7D41F"
+            uuid = "9B70AE5D-17C7-4137-861E-A4408E69B93B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MoviesFinalProjectViper/Module/Detail/DetailViewController.swift"
+            filePath = "MoviesFinalProjectViper/Module/Search/SearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "addTapGestureRegocnizerAction()"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "fetchSearchResultOutput(result:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "32874E60-E84A-4B7F-BFBF-8B52EA40A1B7"
-            shouldBeEnabled = "No"
+            uuid = "49D59D06-5B52-4106-BD33-7829DC350204"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MoviesFinalProjectViper/Module/Detail/DetailViewController.swift"
+            filePath = "MoviesFinalProjectViper/Module/Search/SearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "addTabGestureRecog()"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "didSelectRowAt(index:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "49D59D06-5B52-4106-BD33-7829DC350204 - 8ff126e64925b226"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoviesFinalProjectViper.SearchPresenter.didSelectRowAt(index: Swift.Int) -&gt; ()"
+                  moduleName = "MoviesFinalProjectViper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/humeyrasahin/Desktop/Develop/Bootcamps/turkcell/TurkcellHomeworks/MoviesFinalProjectViper/MoviesFinalProjectViper/Module/Search/SearchPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "49D59D06-5B52-4106-BD33-7829DC350204 - 8ff126e64925b226"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoviesFinalProjectViper.SearchPresenter.didSelectRowAt(index: Swift.Int) -&gt; ()"
+                  moduleName = "MoviesFinalProjectViper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/humeyrasahin/Desktop/Develop/Bootcamps/turkcell/TurkcellHomeworks/MoviesFinalProjectViper/MoviesFinalProjectViper/Module/Search/SearchPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8EE4F47F-66E5-4054-8FAE-9D43C2ED3B0D"
-            shouldBeEnabled = "No"
+            uuid = "41E3152A-2B55-4656-9796-D140AB3C1EEC"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MoviesFinalProjectViper/Module/Splash/SplashInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "checkInternetConnection()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "21AEE087-E896-40CC-91AF-C700C36ACCEC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MoviesFinalProjectViper/Module/App/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "scene(_:willConnectTo:options:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C9DB058-1A48-4F59-95CA-73DCE3CB3590"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MoviesFinalProjectViper/Module/Base/BaseViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "showAlert(title:message:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "64B6875B-A4FE-4C54-BAE0-0ECBA426C587"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MoviesFinalProjectViper/Module/Splash/SplashViewController.swift"
+            filePath = "MoviesFinalProjectViper/Module/Search/SearchRouter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "noInternetConnection()"
+            landmarkName = "navigate(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EDA9B5D-2841-452F-AF4E-E0870235D39C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesFinalProjectViper/Module/Search/SearchRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "navigate(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

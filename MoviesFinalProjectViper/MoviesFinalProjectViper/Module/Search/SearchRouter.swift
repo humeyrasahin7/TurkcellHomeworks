@@ -35,7 +35,7 @@ extension SearchRouter: SearchRouterProtocol{
         switch route {
         case .detail(let movieID):
             let detailVC = DetailRouter.createModules(movieID: movieID)
-            self.viewController?.navigationController?.pushViewController(detailVC, animated: true)
+            self.viewController?.presentingViewController?.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
     

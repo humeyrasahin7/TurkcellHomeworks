@@ -26,9 +26,6 @@ final class ListViewController: UIViewController {
     
     var presenter: ListPresenterProtocol!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Movies"

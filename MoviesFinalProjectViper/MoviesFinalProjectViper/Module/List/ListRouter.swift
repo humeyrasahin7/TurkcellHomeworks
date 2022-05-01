@@ -40,6 +40,7 @@ extension ListRouter: ListRouterProtocol{
             self.viewController?.navigationController?.pushViewController(detailVC, animated: true)
    
         case .searching:
+            
             let searchResultVC = SearchRouter.createModules()
             self.viewController?.setSearchController(vc: searchResultVC)
             

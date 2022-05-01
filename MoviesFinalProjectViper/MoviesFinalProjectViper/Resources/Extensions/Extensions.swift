@@ -103,6 +103,5 @@ func dateFormatterGetYear(_ date: String, format: String = "yyyy-MM-dd") -> Stri
     dateFormatter.dateFormat = "yyyy-MM-dd"
     let date = dateFormatter.date(from: date)
     dateFormatter.dateFormat = format
-    return dateFormatter.string(from: date!)
+    return dateFormatter.string(from: date ?? Date())
 }
-

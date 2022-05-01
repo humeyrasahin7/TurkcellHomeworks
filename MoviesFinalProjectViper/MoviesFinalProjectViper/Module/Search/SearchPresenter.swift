@@ -13,6 +13,7 @@ protocol SearchPresenterProtocol{
     func didSelectRowAt(index: Int)
     func movie(_ index: Int) -> MatchingMovie?
     func fetchSearchResults(query: String)
+    func clearTableView()
 }
 
 final class SearchPresenter{
@@ -31,8 +32,14 @@ final class SearchPresenter{
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    func clearTableView() {
+        movies = []
+        view?.reloadData()
+    }
+    
     func viewDidLoad() {
         view?.setupTableView()
+        
     }
     
     func numberOfItems() -> Int {

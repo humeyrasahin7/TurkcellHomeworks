@@ -29,6 +29,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Movies"
+        navigationItem.hidesSearchBarWhenScrolling = false
         presenter.viewDidLoad()
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(imageChange), userInfo: nil, repeats: true)
     }
@@ -43,7 +44,7 @@ final class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListViewControllerProtocol{
-    func setSearchController(vc: SearchViewController) {
+    func setSearchController(vc: SearchViewController){
         let searchController = UISearchController(searchResultsController: vc)
         searchController.searchBar.placeholder = "Search a Movie"
         searchController.obscuresBackgroundDuringPresentation = true

@@ -36,7 +36,7 @@ extension SearchViewController: SearchViewControllerProtocol{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .clear
-        
+        tableView.keyboardDismissMode = .onDrag
         
     }
     
@@ -73,5 +73,14 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate{
         }
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            presenter.clearTableView()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        presenter.clearTableView()
+    }
     
 }

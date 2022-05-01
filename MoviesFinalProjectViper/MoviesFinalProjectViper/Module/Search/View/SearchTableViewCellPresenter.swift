@@ -23,7 +23,8 @@ final class SearchTableViewCellPresenter{
 
 extension SearchTableViewCellPresenter: SearchTableViewCellPresenterProtocol{
     func load() {
-        view?.setTitle(movie.title ?? "")
+        let year = dateFormatterGetYear(movie.releaseDate ?? "", format: "yyyy")
+        view?.setTitle("\(movie.title ?? "") (\(year))")
     }
     
     

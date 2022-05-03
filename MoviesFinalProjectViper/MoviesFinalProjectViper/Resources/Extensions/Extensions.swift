@@ -90,6 +90,8 @@ public extension UIView{
     }
 }
 
+//MARK: - Date Formatters
+
 func dateFormatter(_ date: String, format: String = "yyyy-MM-dd") ->String{
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"

@@ -9,7 +9,7 @@ import XCTest
 @testable import MoviesFinalProjectViper
 
 
-class DetailPresenterTests: XCTestCase {
+final class DetailPresenterTests: XCTestCase {
     
     var presenter: DetailPresenter!
     var view: MockDetailViewController!

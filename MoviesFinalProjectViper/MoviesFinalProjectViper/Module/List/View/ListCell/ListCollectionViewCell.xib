@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM4-p4-XSP">
-                                <rect key="frame" x="120" y="38" width="298" height="67"/>
+                                <rect key="frame" x="120" y="38" width="298" height="60.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-jG-uxZ">
-                                <rect key="frame" x="381" y="109" width="31" height="22"/>
+                                <rect key="frame" x="381" y="102.5" width="31" height="28.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                             <constraint firstItem="yQQ-5l-ihU" firstAttribute="height" secondItem="4ap-E1-zcl" secondAttribute="height" multiplier="0.2" id="2vs-VE-ygw"/>
                             <constraint firstItem="9zu-jG-uxZ" firstAttribute="bottom" secondItem="4ap-E1-zcl" secondAttribute="bottom" id="F8Q-19-PmD"/>
                             <constraint firstAttribute="trailing" secondItem="yQQ-5l-ihU" secondAttribute="trailing" constant="10" id="Phz-zS-CH3"/>
-                            <constraint firstItem="pM4-p4-XSP" firstAttribute="height" secondItem="4ap-E1-zcl" secondAttribute="height" multiplier="0.55" id="Xs6-2E-6V5"/>
+                            <constraint firstItem="pM4-p4-XSP" firstAttribute="height" secondItem="4ap-E1-zcl" secondAttribute="height" multiplier="0.5" id="Xs6-2E-6V5"/>
                             <constraint firstItem="pM4-p4-XSP" firstAttribute="leading" secondItem="yQQ-5l-ihU" secondAttribute="leading" id="YZp-4D-ceP"/>
                             <constraint firstItem="9zu-jG-uxZ" firstAttribute="top" secondItem="pM4-p4-XSP" secondAttribute="bottom" constant="4" id="Yy5-bl-NCq"/>
                             <constraint firstItem="4ap-E1-zcl" firstAttribute="centerY" secondItem="Y2L-Pl-Gar" secondAttribute="centerY" id="abk-Hg-We5"/>

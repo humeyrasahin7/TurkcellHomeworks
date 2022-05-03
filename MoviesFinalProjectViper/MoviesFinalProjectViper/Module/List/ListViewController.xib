@@ -22,10 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-UU-jgy">
-                    <rect key="frame" x="10" y="44" width="394" height="230"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="230" id="dDF-PK-jnV"/>
-                    </constraints>
+                    <rect key="frame" x="10" y="44" width="394" height="224"/>
                     <viewLayoutGuide key="contentLayoutGuide" id="lsz-np-dsZ"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="EWY-mf-omk"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="zOz-bD-g4r">
@@ -36,12 +33,12 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-KX-rJl">
-                    <rect key="frame" x="0.0" y="252" width="414" height="26"/>
+                    <rect key="frame" x="0.0" y="246" width="414" height="26"/>
                     <color key="pageIndicatorTintColor" red="0.20002762988360245" green="0.20002762988360245" blue="0.20002762988360245" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.96099525689999998" green="0.75483256580000002" blue="0.088400267059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="v8I-Ny-dzv">
-                    <rect key="frame" x="10" y="274" width="394" height="588"/>
+                    <rect key="frame" x="10" y="268" width="394" height="594"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T9K-4S-H8M">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -58,6 +55,7 @@
                 <constraint firstItem="Pt2-UU-jgy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Gwn-GN-m4K"/>
                 <constraint firstItem="P4y-KX-rJl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="REB-De-GGy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="v8I-Ny-dzv" secondAttribute="bottom" id="Sru-lh-NrE"/>
+                <constraint firstItem="Pt2-UU-jgy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="dGV-BE-1Dx"/>
                 <constraint firstItem="P4y-KX-rJl" firstAttribute="bottom" secondItem="Pt2-UU-jgy" secondAttribute="bottom" constant="4" id="eeb-T7-VeI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P4y-KX-rJl" secondAttribute="trailing" id="qCt-co-Dzo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v8I-Ny-dzv" secondAttribute="trailing" constant="10" id="srY-go-0h6"/>

@@ -1,3 +1,4 @@
+
 //
 //  MoviesFinalProjectViperUITests.swift
 //  MoviesFinalProjectViperUITests
@@ -8,34 +9,58 @@
 import XCTest
 
 class MoviesFinalProjectViperUITests: XCTestCase {
+    
+    
+    let app = XCUIApplication()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    func test_GoToDetail(){
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app/*@START_MENU_TOKEN@*/.collectionViews.containing(.other, identifier:"Vertical scroll bar, 8 pages")/*[[".collectionViews.containing(.other, identifier:\"Horizontal scroll bar, 1 page\")",".collectionViews.containing(.other, identifier:\"Vertical scroll bar, 8 pages\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.children(matching: .cell).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
+        app.navigationBars["The Outfit"].buttons["Movies"].tap()
+        
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func test_SearchBar(){
+        
+        app.launch()
+        let moviesNavigationBar = app.navigationBars["Movies"]
+        let cancelButton = moviesNavigationBar.buttons["Cancel"]
+        let searchAMovieSearchField = moviesNavigationBar.searchFields["Search a Movie"]
+        
+        searchAMovieSearchField.tap()
+        
+        let tKey = app/*@START_MENU_TOKEN@*/.keys["T"]/*[[".keyboards.keys[\"T\"]",".keys[\"T\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        tKey.tap()
+        
+        let hKey = app/*@START_MENU_TOKEN@*/.keys["h"]/*[[".keyboards.keys[\"h\"]",".keys[\"h\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        hKey.tap()
+        
+        let eKey = app/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        eKey.tap()
+
+        searchAMovieSearchField.buttons["Clear text"].tap()
+    
+        searchAMovieSearchField.tap()
+        
+        tKey.tap()
+        hKey.tap()
+        eKey.tap()
+        
+        app/*@START_MENU_TOKEN@*/.tables["Search results"]/*[[".otherElements[\"Double-tap to dismiss\"].tables[\"Search results\"]",".tables[\"Search results\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"The Batman (2022)").element.tap()
+        app.navigationBars["The Batman"].buttons["Movies"].tap()
+        cancelButton.tap()
     }
+
+    func test_FavButton(){
+        app.launch()
+        app/*@START_MENU_TOKEN@*/.collectionViews.containing(.other, identifier:"Vertical scroll bar, 8 pages")/*[[".collectionViews.containing(.other, identifier:\"Horizontal scroll bar, 1 page\")",".collectionViews.containing(.other, identifier:\"Vertical scroll bar, 8 pages\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.children(matching: .cell).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
+        let loveButton = app.buttons["love"]
+        loveButton.tap()
+        app.waitForExistence(timeout: 1)
+        loveButton.tap()
+        app.navigationBars["The Outfit"].buttons["Movies"].tap()
+        
+                   
+    }
+
 }

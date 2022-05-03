@@ -10,6 +10,10 @@
 		C2415EEC281C80350007FB27 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2415EEA281C80350007FB27 /* SearchTableViewCell.swift */; };
 		C2415EED281C80350007FB27 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2415EEB281C80350007FB27 /* SearchTableViewCell.xib */; };
 		C2415EEF281C816E0007FB27 /* SearchTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2415EEE281C816E0007FB27 /* SearchTableViewCellPresenter.swift */; };
+		C2415EF1281F0EAC0007FB27 /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = C2415EF0281F0EAC0007FB27 /* Movies.json */; };
+		C2415EF3281F0EFB0007FB27 /* MockListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2415EF2281F0EFB0007FB27 /* MockListInteractor.swift */; };
+		C2415EF7281F11A30007FB27 /* MockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2415EF6281F11A30007FB27 /* MockListViewController.swift */; };
+		C2415EF9281F1C7D0007FB27 /* MockListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2415EF8281F1C7D0007FB27 /* MockListRouter.swift */; };
 		C253764F281990F700A7BC97 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C253764D281990F700A7BC97 /* SplashViewController.swift */; };
 		C2537650281990F700A7BC97 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C253764E281990F700A7BC97 /* SplashViewController.xib */; };
 		C25376532819942C00A7BC97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25376512819942C00A7BC97 /* ListViewController.swift */; };
@@ -53,7 +57,7 @@
 		C28E85182815CF2A00575D31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28E85162815CF2A00575D31 /* Main.storyboard */; };
 		C28E851A2815CF2B00575D31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28E85192815CF2B00575D31 /* Assets.xcassets */; };
 		C28E851D2815CF2B00575D31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28E851B2815CF2B00575D31 /* LaunchScreen.storyboard */; };
-		C28E85282815CF2C00575D31 /* MoviesFinalProjectViperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E85272815CF2C00575D31 /* MoviesFinalProjectViperTests.swift */; };
+		C28E85282815CF2C00575D31 /* MoviesFinalProjectViperTestsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E85272815CF2C00575D31 /* MoviesFinalProjectViperTestsListPresenter.swift */; };
 		C28E85322815CF2C00575D31 /* MoviesFinalProjectViperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E85312815CF2C00575D31 /* MoviesFinalProjectViperUITests.swift */; };
 		C28E85342815CF2C00575D31 /* MoviesFinalProjectViperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E85332815CF2C00575D31 /* MoviesFinalProjectViperUITestsLaunchTests.swift */; };
 		C28E85482815DF2000575D31 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E85472815DF2000575D31 /* NetworkManager.swift */; };
@@ -61,6 +65,11 @@
 		C28E854D2815E24500575D31 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E854C2815E24500575D31 /* ServiceManager.swift */; };
 		C28E85542815E6C800575D31 /* NowPlayingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E85532815E6C800575D31 /* NowPlayingResponse.swift */; };
 		C28E85562816CA5500575D31 /* UpcomingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E85552816CA5500575D31 /* UpcomingResponse.swift */; };
+		C2D32ED528214C7D00B2DA7C /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D32ED428214C7D00B2DA7C /* DetailPresenterTests.swift */; };
+		C2D32ED728214CAF00B2DA7C /* MockDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D32ED628214CAF00B2DA7C /* MockDetailRouter.swift */; };
+		C2D32ED928214CC200B2DA7C /* MockDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D32ED828214CC200B2DA7C /* MockDetailInteractor.swift */; };
+		C2D32EDB28214CDB00B2DA7C /* MockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D32EDA28214CDB00B2DA7C /* MockDetailViewController.swift */; };
+		C2D32EDD28215EC600B2DA7C /* Detail.json in Resources */ = {isa = PBXBuildFile; fileRef = C2D32EDC28215EC600B2DA7C /* Detail.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +93,10 @@
 		C2415EEA281C80350007FB27 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		C2415EEB281C80350007FB27 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		C2415EEE281C816E0007FB27 /* SearchTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellPresenter.swift; sourceTree = "<group>"; };
+		C2415EF0281F0EAC0007FB27 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
+		C2415EF2281F0EFB0007FB27 /* MockListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListInteractor.swift; sourceTree = "<group>"; };
+		C2415EF6281F11A30007FB27 /* MockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListViewController.swift; sourceTree = "<group>"; };
+		C2415EF8281F1C7D0007FB27 /* MockListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListRouter.swift; sourceTree = "<group>"; };
 		C253764D281990F700A7BC97 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C253764E281990F700A7BC97 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		C25376512819942C00A7BC97 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +142,7 @@
 		C28E851C2815CF2B00575D31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C28E851E2815CF2B00575D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C28E85232815CF2C00575D31 /* MoviesFinalProjectViperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesFinalProjectViperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C28E85272815CF2C00575D31 /* MoviesFinalProjectViperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFinalProjectViperTests.swift; sourceTree = "<group>"; };
+		C28E85272815CF2C00575D31 /* MoviesFinalProjectViperTestsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFinalProjectViperTestsListPresenter.swift; sourceTree = "<group>"; };
 		C28E852D2815CF2C00575D31 /* MoviesFinalProjectViperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesFinalProjectViperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28E85312815CF2C00575D31 /* MoviesFinalProjectViperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFinalProjectViperUITests.swift; sourceTree = "<group>"; };
 		C28E85332815CF2C00575D31 /* MoviesFinalProjectViperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFinalProjectViperUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -137,6 +150,11 @@
 		C28E854C2815E24500575D31 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		C28E85532815E6C800575D31 /* NowPlayingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingResponse.swift; path = MoviesFinalProjectViper/Module/List/NowPlayingResponse.swift; sourceTree = SOURCE_ROOT; };
 		C28E85552816CA5500575D31 /* UpcomingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingResponse.swift; sourceTree = "<group>"; };
+		C2D32ED428214C7D00B2DA7C /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
+		C2D32ED628214CAF00B2DA7C /* MockDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailRouter.swift; sourceTree = "<group>"; };
+		C2D32ED828214CC200B2DA7C /* MockDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailInteractor.swift; sourceTree = "<group>"; };
+		C2D32EDA28214CDB00B2DA7C /* MockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailViewController.swift; sourceTree = "<group>"; };
+		C2D32EDC28215EC600B2DA7C /* Detail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Detail.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +292,11 @@
 		C28E85262815CF2C00575D31 /* MoviesFinalProjectViperTests */ = {
 			isa = PBXGroup;
 			children = (
-				C28E85272815CF2C00575D31 /* MoviesFinalProjectViperTests.swift */,
+				C2D32EE02821698C00B2DA7C /* SplashPresenterTests */,
+				C2D32ED22821328100B2DA7C /* ListPresenterTests */,
+				C2D32ED328214C4A00B2DA7C /* DetailPresenterTests */,
+				C2415EF0281F0EAC0007FB27 /* Movies.json */,
+				C2D32EDC28215EC600B2DA7C /* Detail.json */,
 			);
 			path = MoviesFinalProjectViperTests;
 			sourceTree = "<group>";
@@ -428,6 +450,35 @@
 			path = Entitiy;
 			sourceTree = "<group>";
 		};
+		C2D32ED22821328100B2DA7C /* ListPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				C28E85272815CF2C00575D31 /* MoviesFinalProjectViperTestsListPresenter.swift */,
+				C2415EF8281F1C7D0007FB27 /* MockListRouter.swift */,
+				C2415EF2281F0EFB0007FB27 /* MockListInteractor.swift */,
+				C2415EF6281F11A30007FB27 /* MockListViewController.swift */,
+			);
+			path = ListPresenterTests;
+			sourceTree = "<group>";
+		};
+		C2D32ED328214C4A00B2DA7C /* DetailPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				C2D32ED428214C7D00B2DA7C /* DetailPresenterTests.swift */,
+				C2D32ED628214CAF00B2DA7C /* MockDetailRouter.swift */,
+				C2D32ED828214CC200B2DA7C /* MockDetailInteractor.swift */,
+				C2D32EDA28214CDB00B2DA7C /* MockDetailViewController.swift */,
+			);
+			path = DetailPresenterTests;
+			sourceTree = "<group>";
+		};
+		C2D32EE02821698C00B2DA7C /* SplashPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SplashPresenterTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -558,6 +609,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2415EF1281F0EAC0007FB27 /* Movies.json in Resources */,
+				C2D32EDD28215EC600B2DA7C /* Detail.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +673,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C28E85282815CF2C00575D31 /* MoviesFinalProjectViperTests.swift in Sources */,
+				C2415EF7281F11A30007FB27 /* MockListViewController.swift in Sources */,
+				C2D32ED728214CAF00B2DA7C /* MockDetailRouter.swift in Sources */,
+				C2415EF3281F0EFB0007FB27 /* MockListInteractor.swift in Sources */,
+				C2415EF9281F1C7D0007FB27 /* MockListRouter.swift in Sources */,
+				C2D32ED528214C7D00B2DA7C /* DetailPresenterTests.swift in Sources */,
+				C2D32EDB28214CDB00B2DA7C /* MockDetailViewController.swift in Sources */,
+				C2D32ED928214CC200B2DA7C /* MockDetailInteractor.swift in Sources */,
+				C28E85282815CF2C00575D31 /* MoviesFinalProjectViperTestsListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

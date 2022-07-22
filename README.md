@@ -22,4 +22,5 @@ _______
 <img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/SocialMediaMVVM/Screenshots/MVVM.gif" width="250" height="500">
 
 * [Movies App](https://github.com/humeyrasahin7/TurkcellHomeworks/tree/master/MoviesFinalProjectViper): VIPER is used as the desing architecture, Alamofire used for API services and Kingfisher used for the pictures.
+<img src="https://github.com/humeyrasahin7/TurkcellHomeworks/blob/master/MoviesFinalProjectViper/screenshots/record.gif" width="250" height="500">
 
